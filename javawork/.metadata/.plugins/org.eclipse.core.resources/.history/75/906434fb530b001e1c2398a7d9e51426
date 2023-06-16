@@ -1,0 +1,12 @@
+ackage day0615;
+
+public class sss {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("\"red\",\"green\",\"blue\"");
+		System.out.println(" \"  \" ");
+		System.out.println(" \"red  blue\" ");
+	}
+
+}
