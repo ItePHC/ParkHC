@@ -1,0 +1,14 @@
+package day0616;
+
+public class DataType_08 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		byte a = 127; // (byte : -128 ~ 127)
+		byte b = (byte)128;
+	}
+
+}

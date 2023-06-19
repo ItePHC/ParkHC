@@ -1,0 +1,16 @@
+package day0616;
+
+public class ParseNum_02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	String num1 = "10";
+	String num2 = "20";
+	
+	System.out.println("두 수 더하기 : " + (num1 + num2) );
+	
+	
+	}
+
+}
