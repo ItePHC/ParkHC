@@ -1,0 +1,27 @@
+package day0619;
+
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class ScannerMyAge_05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * 당신의 이름은?
+		 * 당신의 출생년도는? 
+		 * =====================
+		 * 이름 :
+		 * 현재년도 :
+		 * 나이 : 
+		 * 
+		 */
+		
+	Calendar cal = 	
+	Scanner info = new Scanner(System.in);
+	
+		
+		
+	}
+
+}

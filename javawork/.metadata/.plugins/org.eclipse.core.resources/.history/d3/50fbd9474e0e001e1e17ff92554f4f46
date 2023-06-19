@@ -1,0 +1,22 @@
+package day0619;
+
+public class OperTest_06 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//증감연산자 ++, --
+		int a, b;
+		a = b = 5;
+		
+		//단항일 경우에는 앞에 붙이나 뒤에 붙이나 같음
+		
+		++a; //원래 a값에서 1 증가
+		b++;
+		
+		
+		System.out.println("a = " +a);
+		System.out.println("b = " +b);
+		
+	}
+
+}
