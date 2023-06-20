@@ -1,0 +1,31 @@
+package day0620;
+
+public class Switch_10 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int n=10;
+		
+		switch (n)
+		{
+		case 1: 
+			System.out.println("n is 1");
+			break;
+		case 2: 
+			System.out.println("n is 2");
+			break;
+		case 3: 
+			System.out.println("n is 3");
+			break;
+		case 4: 
+			System.out.println("n is 4");
+			break;
+		default :
+			System.out.println("n > 4");
+		
+		}
+		
+	}
+
+}

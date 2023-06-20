@@ -1,0 +1,26 @@
+package day0620;
+
+public class CharAt_14 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String perInfo = "001018-3456789";
+		//index 순서 01234567...
+		char seventh = perInfo.charAt(7);
+
+		//System.out.println(seventh);
+		//남자입니다.
+	
+
+		
+		if (seventh % 2 == 0)  
+			System.out.println("남자입니다");
+		else
+			System.out.println("여자입니다");
+				
+		
+		
+	}
+
+}

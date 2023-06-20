@@ -1,0 +1,17 @@
+package day0620;
+
+public class CharAt_14 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String perInfo = "001018-3456789";
+		//index 순서 01234567...
+		char seventh = perInfo.charAt(7);
+		//System.out.println(seventh);
+		
+		
+		
+	}
+
+}
