@@ -1,0 +1,37 @@
+package day0619;
+
+import java.util.Scanner;
+
+public class ScannerMyInfo_04 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * 이름을 입력하세요 : 홍길동
+		 * 핸드폰 번호 : 
+		 * 주소
+		 * =========================
+		 * [개인정보]
+		 * 이름 : 홍길동
+		 * 핸드폰 번호 : 010-1234-5678
+		 * 주소 : 경기도 군포시 ㄴㄴㄴ
+		 * 
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String name;
+		String phone;
+		String city;
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
+

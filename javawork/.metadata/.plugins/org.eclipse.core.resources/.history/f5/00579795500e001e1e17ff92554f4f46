@@ -1,0 +1,25 @@
+package day0619;
+
+public class QuizOper_08 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 월 급여를 입력해서 만, 천, 백, 십, 일원 갯수를 출력해보자
+		// 예 : 금액을 입력하시오
+		
+		/*
+		 * 2565325
+		 * ==============
+		 * 만원 : 256
+		 * 천원 : 5
+		 * 백원 : 3
+		 * 십원 : 2
+		 * 일원 : 5
+		 */
+		
+		
+		
+		
+	}
+
+}

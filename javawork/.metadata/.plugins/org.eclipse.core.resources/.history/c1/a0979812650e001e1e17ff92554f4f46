@@ -1,0 +1,22 @@
+package day0619;
+
+import java.util.Scanner;
+
+public class OperPractice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int Score, Math, Eng, Kor;
+		String name;
+		int tot ;
+		
+	
+		System.out.println("이름 입력 : ");
+		
+		
+	}
+
+}
