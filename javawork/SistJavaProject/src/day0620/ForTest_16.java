@@ -16,7 +16,7 @@ public class ForTest_16 {
 		
 		for(int e =5; e>=1; e--)
 		{
-			System.out.print(e + " ");
+			System.out.println(e + " ");
 		}
 		
 		System.out.println("========================");
@@ -26,12 +26,17 @@ public class ForTest_16 {
 		{
 			System.out.println(o);
 		}
-
+		
+		System.out.println("========================");
+		
 		//3,6,9,12,15
 		for(int a = 3; a<=15; a+=3)
 		{
 			System.out.println(a);
 		}
+		
+		System.out.println("========================");
+		
 		
 		/*
 		 	I love Java_0
@@ -43,6 +48,7 @@ public class ForTest_16 {
 		{
 			System.out.println("I love Java_" + java);
 		}
+		
 		
 		
 	}
