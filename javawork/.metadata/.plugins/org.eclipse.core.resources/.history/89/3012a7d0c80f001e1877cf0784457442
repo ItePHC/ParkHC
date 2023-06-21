@@ -1,0 +1,28 @@
+package day0621;
+
+public class WhileTest_01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 반복문
+		/*
+		 1)
+		 for (초기값; 조건식; 증감식) {
+		 	조건이 참일동안 반복실행
+		 }
+		 
+		 2)
+		 while(조건식){
+		 문장;
+		  }
+		  
+		  => 조건이 참일동안 반복실행. 조건이 안맞으면 한번도 실행 안함(선조건)
+		  
+		  
+		 */
+		
+		
+		
+	}
+
+}

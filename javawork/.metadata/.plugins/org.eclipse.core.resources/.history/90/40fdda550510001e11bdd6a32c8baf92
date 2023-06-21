@@ -1,0 +1,41 @@
+package day0621;
+
+import java.util.Scanner;
+
+public class QuizWhileTrue13 {
+
+	public static void main(String[] args) {
+		/*
+		  점수를 반복해서 입력하다가 q나 Q를 입력하면 while문을 빠져나온 뒤
+		  총 갯수, 총점, 평균을 출력하시오
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		int sum = 0;
+		int cnt = 0;
+		double avg = 0;
+		String word, score;
+		
+		
+		
+		while(true) {
+		System.out.println("점수를 입력해주세요 : (종료를 원하시면 Q를 입력해주세요.)");
+		score = sc.nextLine();
+		
+		
+		input = Integer.parseInt(score);
+		word.equalsIgnoreCase("q");
+		if(input = 0 )
+			break;
+		
+		tot += input;
+		cnt++;
+			
+		}
+		
+		
+		
+		
+	}
+
+}

@@ -20,12 +20,15 @@
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\user\Desktop\Data\day0621.zip"/>
+			<item value="C:\Users\user\Desktop\day0620.zip"/>
 			<item value="C:\Users\user\Desktop\Park.zip"/>
 		</list>
 	</section>
 	<section name="ZipFileImportWizard">
 		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\user\Desktop\QuizIfOper_05.zip"/>
 			<item value="C:\Users\user\Desktop\Park_0619\SistJavaProject\src\day0619.zip"/>
 			<item value="C:\Users\user\Desktop\Park_0619.zip"/>
 		</list>
