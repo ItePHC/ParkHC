@@ -1,0 +1,36 @@
+package day0622;
+
+public class QuizForWhile_01 {
+	
+	public static void quiz1() {
+		//가로로 출력 for _ 1 2 3 4 5 그리고 다음줄에 종료라고 출력
+		for (int i = 0; i<=5; i++) {
+			System.out.print(i);
+		}
+	}
+	
+	public static void quiz2() {
+		
+	}
+
+	public static void quiz3() {
+		
+	}
+	
+	public static void quiz4() {
+		
+	}
+	
+	public static void quiz5() {
+		
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		quiz1();
+	}
+
+}

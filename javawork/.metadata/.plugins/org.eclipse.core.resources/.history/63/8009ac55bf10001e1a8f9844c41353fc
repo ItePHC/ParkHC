@@ -1,0 +1,10 @@
+package day0622;
+
+public class ScanGuGu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//0을 입력시 종료
+	}
+
+}
