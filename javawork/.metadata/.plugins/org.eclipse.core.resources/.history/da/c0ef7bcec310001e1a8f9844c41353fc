@@ -1,0 +1,17 @@
+package day0622;
+
+public class GaroGuGu_06 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 가로방향으로 구구단을 출력하세요
+		//[2단] [3단] [4단] [5단] ... [9단]
+		
+		for(int n = 2; n <= 9; n++ ) {
+			for(int su = 2; su <= 9; su++)
+			System.out.print("[" + n + "단] ");
+		}
+		
+	}
+
+}

@@ -1,0 +1,33 @@
+package day0622;
+
+import java.util.Scanner;
+
+public class ScanGuGu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 단을 입력해서 해당 단 출력하기
+		// 0을 입력시 종료
+		int i;
+		int m;
+		Scanner sc = new Scanner(System.in);
+		
+		while(true) {
+		System.out.println("단을 입력해주세요(0을 입력시 종료됩니다) ");
+		i = sc.nextInt();
+		
+		if(i == 0) 
+			break;
+		m++;
+			
+	
+		}
+		
+		
+		
+		
+		
+		if(i)
+	}
+
+}
