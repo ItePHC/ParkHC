@@ -1,0 +1,14 @@
+package day0620;
+
+public class SubString_15 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str = "나는 쌍용에서 자바를 공부중입니다";
+		
+		char ch = str.charAt(3);
+		System.out.println(ch);
+	}
+
+}

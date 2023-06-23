@@ -1,0 +1,15 @@
+package day0621;
+
+public class WhileTrueCount_12 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 임의의 수를 입력해서 합계, 평균, 갯수 
+		 단 0을 입력하면 while문을 빠져나가게 하자
+		 */
+		
+
+	}
+
+}

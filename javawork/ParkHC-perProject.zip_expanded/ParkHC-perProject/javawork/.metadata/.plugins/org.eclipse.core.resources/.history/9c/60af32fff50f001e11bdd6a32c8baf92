@@ -1,0 +1,22 @@
+package day0621;
+
+import java.util.Scanner;
+
+public class ScannerFor_11 {
+	
+	public static void numSum() {
+		//합계를 구할 숫자?		n(100)
+		//1부터 n(100)까지의 합은 5050입니다
+		
+	Scanner sc = new Scanner(System.in);
+	
+	
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

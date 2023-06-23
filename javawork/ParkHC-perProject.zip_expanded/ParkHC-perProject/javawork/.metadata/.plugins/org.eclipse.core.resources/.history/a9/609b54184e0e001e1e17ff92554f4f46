@@ -1,0 +1,15 @@
+package day0619;
+
+public class OperTest_06 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//증감연산자 ++, --
+		int a, b;
+		a = b = 5;
+		
+		
+		
+	}
+
+}

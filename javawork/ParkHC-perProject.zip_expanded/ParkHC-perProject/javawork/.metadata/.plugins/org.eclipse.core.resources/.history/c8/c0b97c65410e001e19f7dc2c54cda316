@@ -1,0 +1,16 @@
+package day0619;
+
+import java.util.Scanner;
+
+public class KeyBoardIn_02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+		
+		//Scanner는 문자열이나 숫자를 모두 키보드로 입력받으려 할 때 생성
+	Scanner	sc = new Scanner(System.in)
+		
+	}
+
+}
