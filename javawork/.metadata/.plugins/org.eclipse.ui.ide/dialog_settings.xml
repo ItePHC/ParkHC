@@ -29,6 +29,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\user\Desktop\Data\2주차\day0626\SistJavaProject\src\day0624"/>
+			<item value="C:\sist0615\work\javawork\SistJavaProject\src"/>
+			<item value="C:\Users\user\Desktop\Data\2주차\day0626.zip"/>
 			<item value="C:\Users\user\Downloads\ParkHC-perProject.zip"/>
 			<item value="C:\Users\user\Desktop\Data\day0622.zip"/>
 		</list>
