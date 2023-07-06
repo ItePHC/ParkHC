@@ -8,8 +8,21 @@
     <fullyQualifiedTypeName name="day0620.Switch_10"/>
     <fullyQualifiedTypeName name="java.util.Calendar"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="day0623.TempNumChange_11"/>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="day0623.Random_01"/>
+    <fullyQualifiedTypeName name="day0627.ExObject_01"/>
+    <fullyQualifiedTypeName name="day0627.Ex2Object_02"/>
+    <fullyQualifiedTypeName name="day0627.MemoryCnt_04"/>
+    <fullyQualifiedTypeName name="day0627.ConstA"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="day0627.ObTestA"/>
+    <fullyQualifiedTypeName name="day0627.Student_03"/>
+    <fullyQualifiedTypeName name="day0627.Student"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>
