@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 13pt;
+            margin-bottom: 10px;
+        }
+        .hello_0{
+            border: 10px groove rgb(190, 220, 17);
+            font-family: 'Dongle';
+            background-color: rgb(122, 14, 217);
+            color: rgb(255, 255, 255);
+        }
+        .hello_1{
+            border: 10px groove orange;
+            font-family: 'Dongle';
+            background-color: bisque;
+            color: brown;
+        }
+        .hello_2{
+            border: 10px groove greenyellow;
+            font-family: 'Dongle';
+            background-color: black;
+            color: deeppink;
+        }
+        .hello_3{
+            border: 10px groove thistle;
+            font-family: 'Dongle';
+            background-color: blue;
+            color: gold;
+        }
+        .hello_4{
+            border: 10px groove whitesmoke;
+            font-family: 'Dongle';
+            background-color: rgb(210, 10, 207);
+            color: whitesmoke;
+        }
+    </style>
+    <script>
+        //적용버튼을 누를 시 모든 div에 인덱스별로 적용된다
+        // $("button").click(function(){
+        //     $("div").each(function(i){
+        //         $(this).addClass("hello_"+i);
+        //     });
+        // });
+
+        $(function(){
+            $("button:eq(0)").click(function(){
+                $("div").each(function(i){
+                    $(this).addClass("hello_"+i)
+                });
+            });
+            $("button:eq(1)").click(function(){
+                $("div").each(function(i){
+                    $(this).removeClass("hello_"+i)
+                });
+            });
+        });
+        //제거 버튼을 누르면 인덱스 별 적용된 클래스가 제거된다
+
+
+    </script>
+</head>
+<body>
+    <button type="button" class="btn btn-outline-info">스타일 적용</button>
+    <button type="button" class="btn btn-outline-danger">스타일 제거</button>
+
+    <div>안녕하세요</div>
+    <div>오늘은 jquery</div>
+    <div>반복문과 addClass를</div>
+    <div>배우고 있어요</div>
+    <div>화이팅</div>
+
+</body>
+</html>

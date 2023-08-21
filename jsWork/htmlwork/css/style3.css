@@ -1,0 +1,20 @@
+#box1 {
+    background-color: aquamarine;
+    color: black;
+    width: 800px;
+    height: 500px;
+    border: 3px solid black;
+    margin: auto;
+}
+#box1 h1 {
+    text-align: center; 
+     color: white; 
+}
+#box1 p {
+    text-align: center;
+    color: blueviolet;
+}
+#box1 ul li {
+    list-style: none;
+    padding-left: 20px;
+}

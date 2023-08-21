@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myimg1{
+          width: 200px;
+          height: 150px;
+          border-radius: 30px;
+          border: 2px solid darkmagenta;  
+        }
+
+        /* #myimg1:hover{
+            background-image: url("../flower_ani/f12.png");
+        }
+
+        #myimg1:active{                                 마우스로 누르고 있는 동안
+            background-image: url("../flower_ani/f14.png");
+        } */
+
+
+
+    </style>
+</head>
+<body>
+    <img src="../flower_ani/f11.png" title="클럽샌드위치" id="myimg1"
+    onmouseover="src='../flower_ani/f14.png'"
+    onmouseout="src='../flower_ani/f12.png'"    >
+
+    <img src="../Food/1.jpg"
+    onmouseenter="this.src='../Food/2.jpg'"
+    onmouseleave="this.src='../Food/1.jpg'">
+   
+   
+    <!-- mouseover와 mouseenter의 차이 -->
+
+</body>
+</html>

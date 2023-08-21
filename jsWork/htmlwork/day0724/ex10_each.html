@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .bg_0{background-color: aqua; color: black;}
+        .bg_1{background-color: aquamarine; color: blue;}
+        .bg_2{background-color: blueviolet; color: white;}
+        .bg_3{background-color: red; color: blanchedalmond;}
+        .bg_4{background-color: cyan; color: gray;}
+        .bg_5{background-color: black; color: goldenrod;}
+        .bg_6{background-color: magenta; color: yellow;}
+    </style>
+</head>
+<body>
+    <!-- 태그 반복할떄 사용하는 each -->
+    <b></b><b></b><b></b><b></b><b></b><b></b>
+    <script>
+        //b태그 갯수만큼 자동반복
+        // i는 index: 0부터
+        //element는 인덱스에 해당하는 b태그를 생략가능하다
+
+        $("b").each(function(i, elt){   //element(elt) 생략가능    
+            // $(elt).text(i);          //(this)사용시 element(elt) 생략가능    
+            $(this).text(i);
+        });
+    </script>
+    <hr>
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>메론</li>
+        <li>포도</li>
+        <li>참외</li>
+        <li>키위</li>
+        <li>오렌지</li>
+    </ul>
+    <script>
+        $("ul li").each(function(idx){
+            $(this).addClass("bg_"+idx);
+        })
+
+
+        //append() & after
+        $("ul li").mouseover(function(){
+            $(this).append("<b>***</b>");
+        })
+
+        $("ul li").mouseout(function(){
+            // $(this).next().remove();
+            //find: 하위태그 중에서 find로 b태그를 찾는다
+            $(this).find("b").remove();
+        })
+    </script>
+</body>
+</html>

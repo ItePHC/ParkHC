@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">            
+      <!-- ↓ 아래 font 링크 https://fonts.google.com/ > language korean > 폰트 선택 > select regular 400+ 선택 > 오른쪽 위 빨간점 있는 view selected families > 오른쪽 아래 네모박스 링크에서 찾아서 붙여넣기 -->
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Gamja+Flower&family=Gowun+Batang&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            float: left;
+            width: 150px;
+            height: 50px;
+            border: 1px solid gray;
+            text-align: center;  /* text-align 가로 맞춤 */
+            line-height: 50px;  /* line-height 세로 맞춤 */
+            margin-right: 10px;
+            /* margin-left: 10px;
+               margin: 0 10px 0 0;  */
+            background-color: whitesmoke;
+            font-size: 15px;
+            font-family: 'Sunflower';     
+            border-radius: 20px;     
+        }
+
+        li:hover{
+            /*
+            hover는 마우스를 올려뒀을떄 반응하는 가상클래스 
+            링크요소에 주로 사용되며 해당 예시에서는 li에 적용한 상태이므로 li위에 마우스 커서를 올려 둘 경우 hover 발동
+            */
+            background-color: rgb(181, 201, 255);
+            color: white;
+            box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.452);
+            cursor: pointer;
+
+        }
+        
+    </style>
+</head>
+<ul>
+    <h3>ul을 이용 간단메뉴</h3>
+    <br>
+    <li>Home</li>
+    <li>샵소개</li>
+    <li>게시판</li>
+    <li>방명록</li>
+    <li>오시는길</li>
+    <li>Q&A</li>
+</ul>
+
+</body>
+</html>

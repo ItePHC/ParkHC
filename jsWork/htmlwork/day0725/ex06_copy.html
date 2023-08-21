@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" class="btn btn-info" id="btn1">1번 영역 복사해서 3번 영역에 추가</button>
+    <br>
+    <button type="button" class="btn btn-info" id="btn2">2번 영역 복사해서 4번 영역에 추가</button>
+    <br>
+    <button type="button" class="btn btn-info" id="btn3">3번 4번 영역 모두 제거</button>
+    <br>
+    <hr>
+    <div id="box1">
+        <b>1번박스</b>
+        <img src="../flower_ani/f15.png" width="100">
+        <img src="../flower_ani/f16.png"width="100">
+    </div>
+    <div id="box2">
+        <b>2번박스</b>
+        <img src="../flower_ani/f17.png"width="100">
+        <img src="../flower_ani/f18.png"width="100">
+    </div>
+    <div id="box3">
+        <b>3번박스</b>
+        
+    </div>
+    <div id="box4">
+        <b>4번박스</b>
+        
+    </div>
+
+    <script>
+        $("#btn1").click(function(){
+            
+            //box1아래 모든 img태그 복사
+            var no1 = $("#box1").find("img").clone();
+            //3번박스 영역에 추가
+            $("#box3").append(no1);
+        });
+        $("#btn2").click(function(){
+            
+            var no2 = $("#box2 img").clone();
+            $("#box4").append(no2);
+        });
+        $("#btn3").click(function(){
+            // $("#box3").find("img").remove();
+            $("#box4").find("img").remove();
+            
+            $("#box3 img").remove();
+        });
+    </script>
+</body>
+</html>

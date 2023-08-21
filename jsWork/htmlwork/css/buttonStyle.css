@@ -1,0 +1,36 @@
+/* 구글 폰트 > view selected families */
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Orbit&family=Poor+Story&family=Sunflower:wght@300&display=swap');
+body{
+    font-family: 'Dongle';
+    font-size: 30pt;
+}
+
+.btn{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.btn-lightseagreen{
+    background-color: lightseagreen;
+    color: white;
+    font-size: 12pt;
+}
+
+.btn-lightpink{
+    background-color: lightpink;
+    color: black;
+    font-size: 12pt;
+}
+
+.btn-lemonchiffon{
+    background-color: lemonchiffon;
+    color: black
+}
+
+.btn-skyblue{
+    background-color: skyblue;
+    color:black;
+    font-size: 12pt;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <style>
+        #out{
+            position: absolute;
+            left: 10px;
+            top: 150px;
+            width: 400px;
+            height: 400px;
+            border: 1px solid gray;
+            background-color: blanchedalmond;
+            padding: 20px;
+        }
+    </style>
+    <script>
+    // window.onload=function(){
+
+    //     var img1=document.getElementById("img1");
+    //     var img2=document.getElementById("img2");
+    //     var result=document.getElementById("img");
+
+    //     img1.onclick=function(){
+    //         var yn=confirm("음식을 출력할까요?")
+    //         if(yn==1){
+    //             result.setAttribute("src","../Food/11.jpg");
+    //             result.setAttribute("width","300");
+    //             result.setAttribute("height","300")
+    //         }
+    //         else{
+    //             alert("취소합니다");
+    //         }
+    //     }
+
+    //     img2.onclick=function(){
+    //         var yn =confirm("연예인을 출력할까요?")
+    //             if(yn==1){
+    //                 result.setAttribute("src","../연예인사진/13.jpg");
+    //                 result.setAttribute("width","300");
+    //                 result.setAttribute("height","400")
+    //             }
+    //             else{
+    //                 alert("취소합니다.");
+    //             }
+    //     }
+    // }
+            function click1(){ 
+                var yn =confirm("음식을 출력할까요?")
+                if(yn==1){
+                    var img = "<img width=300 height=300 src='../Food/11.jpg'>";
+                    out.innerHTML=img;
+                }
+                else{
+                    alert("취소합니다.");
+                }
+            }
+
+            function click2(){ 
+                var yn =confirm("연예인을 출력할까요?")
+                if(yn==1){
+                    var img = "<img width=300 height=350 src='../연예인사진/13.jpg'>";
+                    out.innerHTML=img;
+                }
+                else{
+                    alert("취소합니다.");
+                }
+            }
+
+    </script>
+</head>
+<body>
+    <!-- 버튼 2개에 하나는 food 하나는 연예인 이라고 쓰고 css는 우리가 만든 buttonStyle에서 적용
+    
+    food 버튼 클릭식 음식사진을 div에 출력 연예인 클릭시 연예인 한명 출력-->
+    <form action="#" name="frm" >
+        <input type="button" name="food" value="Food" class="btn btn-blueviolet" id="img1" onclick="click1()">
+        <input type="button" name="people" value="연예인" class="btn btn-black" id="img2" onclick="click2()">
+        <div id="out">
+            <img src="" width="" height="" id="img">
+        </div>
+    </form>
+
+</body>
+</html>

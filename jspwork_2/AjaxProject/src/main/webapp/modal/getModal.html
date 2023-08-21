@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+	$(function(){
+		 $("td.subject").click(function(){
+			 $("#myModal").modal();
+		 }) ;
+	  });
+</script>
+<style>
+	.subject{
+		cursor: pointer;
+	}
+</style>
+</head>
+
+<body>
+	
+	
+
+	<table class="table table-bordered" style="width: 500px; margin-top: 50px;">
+		<tr class="table-info">
+			<th width="60">번호</th>
+			<th width="250">제목</th>
+			<th width="120">작상자</th>
+			<th width="60">조회</th>
+		</tr>
+		<tr>
+			<td align="center">10</td>
+			<td class="subject" title="../Image/logoImg/a01.png" writer="김영준">자바스터디 모임</td>
+			<td align="center">김영준</td>
+			<td align="center">0</td>
+		</tr>
+		<tr>
+			<td align="center">11</td>
+			<td class="subject" title="../Image/logoImg/a02.png" writer="박희찬">SQLD스터디 모임</td>
+			<td align="center">박희찬</td>
+			<td align="center">1</td>
+		</tr>
+		<tr>
+			<td align="center">12</td>
+			<td class="subject" title="../Image/logoImg/a03.png" writer="이성신">쌍용7반 모임</td>
+			<td align="center">이성신</td>
+			<td align="center">10</td>
+		</tr>
+		<tr>
+			<td align="center">14</td>
+			<td class="subject" title="../Image/logoImg/a04.png" writer="홍성경">ajax 모임</td>
+			<td align="center">홍성경</td>
+			<td align="center">4</td>
+		</tr>
+		<tr>
+			<td align="center">15</td>
+			<td class="subject" title="../Image/logoImg/a05.png" writer="김영환">점심팟 모임</td>
+			<td align="center">김영환</td>
+			<td align="center">3</td>
+		</tr>
+	</table>
+	
+	<div style="width: 500px; text-align: center;">
+		<ul class="pagination">
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li class="active"><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+		</ul>
+	</div>
+	
+	 <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">		<!--modal-sm-->
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        
+        <div class="modal-body">
+          <p class="photo-title">Some text in the modal.</p>
+          <img src= class="photo" style="width: 200px;">
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	
+</body>
+</html>

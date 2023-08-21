@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    /* 위 아래 100% 칠하기 */
+
+    background: #222;
+    height: 100%;
+}
+
+#container {
+    /* 위치 고정 */
+    position: absolute;
+    margin-left: -400px;
+    width: 900px;
+    height: 100%;
+    background-color: #fff;
+    left: 50%;
+}
+
+aside{
+    float: left;
+    width: 300px;
+    padding: 20px 50px;
+    height: 100%;
+    background: lightgray;
+}
+
+aside>div>img {
+    width: 200px;
+    height: 300px;
+    border-radius: 90px;
+}
+
+
+#main{
+    float: right;
+    padding: 40px;
+}

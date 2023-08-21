@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<person no="1">
+		<name>최성현</name>
+		<addr>수원시</addr>
+	</person>
+	<person no="2">
+		<name>장순영</name>
+		<addr>수원시/</addr>
+	</person>
+	<person no="3">
+		<name>박희찬</name>
+		<addr>군포시</addr>
+	</person>
+	<person no="4">
+		<name>최진평</name>
+		<addr>제주시</addr>
+	</person>
+	<person no="5">
+		<name>이성신</name>
+		<addr>안산시</addr>
+	</person>
+</data>

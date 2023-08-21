@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
-		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-		</list>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="857"/>
+		<item key="DIALOG_Y_ORIGIN" value="463"/>
 	</section>
-	<section name="CleanDialogSettings">
-		<item key="TOGGLE_SELECTED" value="false"/>
-		<item key="DIALOG_WIDTH" value="500"/>
-		<item key="DIALOG_HEIGHT" value="389"/>
-		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
-	</section>
-	<section name="ExternalProjectImportWizard">
-		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="true"/>
-		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
-		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value=""/>
-		</list>
-		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
-			<item value="C:\Users\user\Downloads\WebMarket.zip"/>
-			<item value="C:\Users\user\Desktop\Park.zip"/>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
 	<section name="SmartImportWizard">
@@ -29,11 +14,36 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="C:\Users\user\Desktop\Data\2주차\day0626\SistJavaProject\src\day0624"/>
-			<item value="C:\sist0615\work\javawork\SistJavaProject\src"/>
-			<item value="C:\Users\user\Desktop\Data\2주차\day0626.zip"/>
-			<item value="C:\Users\user\Downloads\ParkHC-perProject.zip"/>
-			<item value="C:\Users\user\Desktop\Data\day0622.zip"/>
+			<item value="C:\Users\user\Downloads\sistRheeMingyu-mingyu\sistRheeMingyu-mingyu\javawork\SistJavaProject"/>
+			<item value="C:\Users\user\Downloads\WebMarket.zip"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\Sist\src"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\WebMarket\WebMarket"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\WebMarket\BookMarket"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\BookMarket"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\WebMarket"/>
+			<item value="C:\sist\Eclipse_Workspace\WebMarket"/>
+			<item value="C:\sist\Eclipse_Workspace\BookMarket"/>
+			<item value="C:\sist\JSP_WebStore"/>
+			<item value="C:\Users\user\Downloads\201905061_박희찬.zip"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\src"/>
+			<item value="C:\sist\Eclipse_Workspace\Sist"/>
+			<item value="C:\sist\Eclipse_Workspace\JDBC_OracleProject"/>
+			<item value="C:\sist\Eclipse_Workspace\QuizJDBC"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\Sist\Sist"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\Sist.zip"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\Sist"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\QuizJDBC"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\JDBC_OracleProject"/>
+			<item value="C:\Users\user\OneDrive\바탕 화면\JDBC_OracleProject.zip"/>
 		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
 	</section>
 </section>

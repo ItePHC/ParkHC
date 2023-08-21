@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 70px;
+            height: 80px;
+            border: 1px solid gray;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>배열_초기값 지정</h3>
+    <script>
+        var arr1=["../연예인사진/1.jpg","../연예인사진/9.jpg","../만화이미지/16.png","../만화이미지/15.png","../flower_ani/redhair9.png"];
+        var s="배열갯수: "+arr1.length;
+
+        //for문
+
+        for(var i=0;i<arr1.length;i++)
+        {
+            s+="<img src='"+arr1[i]+"'>";    
+        }
+        document.write(s);
+
+    </script>
+
+    <br><br>
+    <h3>배열_new Array로 지정</h3>
+    <script>
+
+            //Food 폴더의 이미지 5개 0~4까지 지정하시고 출력
+        var arr2=new Array(5);
+    
+        arr2[0]="../Food/6.jpg";
+        arr2[1]="../Food/10.jpg";
+        arr2[2]="../Food/1.jpg";
+        arr2[3]="../Food/11.jpg";
+        arr2[4]="../Food/8.jpg";
+
+        var s="배열갯수: "+arr2.length+"<br>";
+    
+        for(var i=0;i<arr2.length;i++)
+        {
+            s+="<img src='"+arr2[i]+"'>";
+        }
+
+        document.write(s);
+    </script>
+
+    <h3>배열_new Array로 지정.. push로 초기화</h3>
+    <script>
+        var arr3=new Array();
+
+        arr3.push("../연예인사진/1.jpg");
+        arr3.push("../연예인사진/19.jpg");
+        arr3.push("../연예인사진/17.jpg");
+        arr3.push("../연예인사진/13.jpg");
+        arr3.push("../연예인사진/2.jpg");
+        arr3.push("../연예인사진/16.jpg");
+
+
+        var s="배열개수: "+arr3.length+"<br>";
+
+         for(var i=0;i<arr3.length;i++)
+        {
+         s+="<img src='"+arr3[i]+"'>";
+        }
+
+        document.write(s);
+
+    </script>
+
+    <h3>배열_new Array로 지정..arr3에서 pop으로 2개 삭제 후 출력</h3>
+    <script>
+        arr3.pop();
+        arr3.pop();
+
+        var s="배열개수: "+arr3.length+"<br>";
+
+        for(var i=0;i<arr3.length;i++)
+        {
+         s+="<img src='"+arr3[i]+"'>";
+        }
+
+        document.write(s);
+
+
+    </script>
+
+ 
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function photoSmall(){
+
+            var p=document.getElementById("myimg");
+            var w=p.getAttribute("width"); //stringdlsep -*는 숫자로 계산됨(+만안됨)
+            w-=10;
+            p.setAttribute("width",w);
+        }
+
+        function photoLarge(){
+
+            var p=document.getElementById("myimg");
+            var w=p.getAttribute("width");
+            w=parseInt(w);
+            w+=10;
+            p.setAttribute("width",w);
+
+        }
+    </script>
+</head>
+<body>
+    <div id="one">
+        <button type="button" onclick="photoSmall()">점점작게</button>
+        <button type="button" onclick="photoLarge()">점점크게</button>
+    </div>
+    <img src="../만화이미지/02.png" width="200" id="myimg">
+</body>
+</html>

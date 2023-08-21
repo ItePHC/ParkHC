@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+	table{
+		background-color: darkgray;
+	}
+	
+</style>
+</head>
+<body>
+	
+	 <form action="QuizAction.jsp" method="get">
+		 <table class="table table-bordered" style=	"width: 600px; border: 2px solid gold;">
+			 <tr>
+				 <th>상품명 : </th>
+				 <td>
+					<input type="text" name="sangname" required="required" class="form-control">
+					
+				 </td>
+			 </tr>
+			 
+			 <tr style="background-color: darkgray;"> 
+				 <th>기종 : </th>
+				 <td>
+					<select name="phone" style="width: 100px;">
+						<option value="아이폰 12">아이폰 12</option>
+						<option value="아이폰 13">아이폰 13</option>
+						<option value="아이폰 13 plus">아이폰 13 plus</option>
+						<option value="아이폰 14">아이폰 14</option>
+						<option value="아이폰 14 plus">아이폰 14 plus</option>
+						<option value="아이폰 14 pro">아이폰 14 pro</option>
+						<option value="아이폰 14 pro max">아이폰 14 pro max</option>
+						
+				 </td>
+			 </tr>
+			 
+			 <tr>
+				 <th>색상 :(선택하지 않을 시 투명케이스) </th>
+				 <td>
+					<input type="checkbox" name="color" value="green">그린
+					<input type="checkbox" name="color" value="pink">핑크
+					<input type="checkbox" name="color" value="gray">그레이
+					<input type="checkbox" name="color" value="blue">블루
+					<input type="checkbox" name="color" value="purple">퍼플
+				 </td>
+			 </tr>
+			 
+			 <tr>
+				<th>추가 상품 : </th>
+				<td>
+					<select name="sangpum">
+						<option value="없음">없음</option>
+						<option value="아이패드">아이패드</option>
+						<option value="충전기">맥세이프 충전기</option>
+						<option value="카드지갑">카드지갑</option>
+						<option value="애플워치">애플워치</option>
+						<option value="에어팟">에어팟</option>
+				</td>		 
+			 </tr>
+			 
+			 <tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="서버로 전송" class="btn btn-success">
+				</td>	
+			</tr>
+		 </table>
+	 </form>
+</body>
+</html>

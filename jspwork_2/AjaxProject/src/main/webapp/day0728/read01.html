@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<img src="../Image/jquery_img/01.png">
+	<br>
+	<button type="menu" class="btn btn-outline-info" id="btn1">data1.xml읽기</button>
+	<button type="menu" class="btn btn-outline-danger" id="btn2">data1.json읽기</button>
+	<br>
+	<div id="result">결과출력</div>
+	
+	<script>
+		$("#btn1").click(function(){
+			$("#result").empty();
+			//xml읽기
+			$.ajax({
+				type:"get",
+				url:"data1.xml",
+				dataType:"xml",	//xml인지 json인지 선택
+				success:function(data){				//data는 ajax에서 html로 넘어오는걸 의미
+					var s="City:"+$(data).find("name").attr("city")+"<br>";
+					s+="Name : "+$(data).find("name").text()+"<br>";
+					s+="Age : " + $(data).find("age").text()+"<br>";
+					
+					$("#result").append(s);
+				},statusCode:{
+					404:function(){
+						alert("XML 파일을 찾을수 없어요");
+					}, 
+					500:function(){
+						alert("서버오류... 코드를 다시한번 보세요")
+					}
+				}
+				//data
+			});
+		});
+		$("#btn2").click(function(){
+			$("#result").empty();				//버튼 2번을 클릭시 기존 출력된 결과 제거를 의미
+			$.ajax({
+				type:"get",
+				url:"data1.json",
+				dataType:"json",
+				success:function(data){
+					var s="";
+					s+="이름 : " + data.name + "<br>";
+					s+= "주소 : " + data.addr + "<br>";
+					s+= "점수 : " + data.score + "<br>";
+					
+					$("#result").append(s);
+				}, 
+				statusCode:{
+					404:function(){
+						alert("json 파일을 찾을수 없어요");
+					},
+					500:function(){
+						alert("서버 오류 발생 코드 다시보기");
+					}
+				}
+			});
+		});
+	</script>
+		
+</body>
+</html>

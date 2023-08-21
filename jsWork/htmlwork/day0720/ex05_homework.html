@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        #out3{
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            border: 1px solid gray;
+            padding: 20px;
+        }
+
+        #bts{
+            width: 500px;
+            height: 150px;
+            line-height: 150px;
+            font-family: 'Nanum pen Script';
+            font-size: 40px;
+            text-align: center;
+            border: 2px solid gray;
+            margin-top: 20px;
+            background: url('../만화이미지/03.png') no-repeat right bottom;
+            background-size: 100px 120px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 1.만화이미지 01.png~10.png까지 추력하세요(for문이용) -->
+    <b>[1번문제]</b>
+    <br><br>
+        <script>
+            for(var i=0;i<10;i++){
+                if(i<9){
+                    document.write("<img src='../만화이미지/0"+(i+1)+".png' width='80'>")
+                }
+                else{
+                    document.write("<img src='../만화이미지/10.png' width='80'>")
+                }
+            }
+        </script>
+        
+    <br><br><hr>
+    <!-- 2.음식사진 1.jpg를 img태그로 나타낸 후 id를 img1으로 주고
+    그아이디로 이벤트를 추가합니다
+사진에 마우스를 올리면 3.jpg로 바뀌고 클릭하면 5.jpg로 바뀌며
+마우스를 벗어나면 다시 원래사진으로 돌아가게 이벤트 주기 -->
+<b>[2번문제]</b>
+<br><br>
+<img src="../Food/1.jpg" width="200" height="200" id="img2"
+onmouseleave="src='../Food/1.jpg'"
+onmouseenter="src='../Food/3.jpg'"
+onmousedown="src='../Food/5.jpg'">
+<br><br><hr>
+
+<!-- 3. img로 width=200 height=180 으로 사진(아무거나) body에 넣은 후
+이미지를 클릭하면 아래 div태그안에 각종정보(src,width,height)를 얻어서
+출력하시오(getAttribute,innerHTML 사용) -->
+<b>[3번문제]</b>
+<script>
+        function onclick3(){
+            var img3=document.getElementById("img3");
+            var src=img3.getAttribute("src");
+            var width=img3.getAttribute("width");
+            var height=img3.getAttribute("height");
+
+            out3.innerHTML="src = '"+src+"', width = '"+width+"', height = '"+height+"' ";
+        }
+</script>
+<br>
+<img src="../만화이미지/17.png" width="200" height="180" id="img3" onclick="onclick3()">
+<div id="out3"></div>
+<br><br><br><br><br><br><br><br><br><br><hr>
+
+<!-- 4. 버튼을 하나만든 후 클릭하면 pprompt창에 이름을 입력받아서 div태그안에
+"내 이름은 *** 입니다" 라고 출력하세요
+(div 에 class="bts" 라고 준 후 css로 이쁘게 스타일 적용용) -->
+<b>[4번문제]</b>
+<script>
+    window.onload=function(){
+        btn1.onclick=function(){
+            var name = prompt("이름을 입력하시오");
+            bts.innerHTML="내 이름은 "+name+"입니다."
+        }
+    }
+</script>
+<br><br>
+<input type="button" value="출력!" id="btn1" class="btn btn-black">  
+<div id="bts"></div>
+</body>
+</html>

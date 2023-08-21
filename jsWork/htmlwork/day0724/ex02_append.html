@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h4>html1() : 자바스크립트의 innerHTML()에 해당한다</h4>
+    <h4>text() : 자바스크립트의 innerText()에 해당한다</h4>
+    <h4>append() : 추가 </h4>
+    <hr>
+    <h2>1</h2>
+    <h2>2</h2>
+    <h2>3</h2>
+    <script>
+        //h2중에서 1번째에 html태그 넣기
+        // $("h2").eq(0).html("<b>H2태그입니다</b>");
+        // $("h2:eq(0)").html("<b>H2태그입니다</b>");
+        // $("h2:first").html("<b>H2태그입니다</b>");
+        $("h2").first().html("<b>H2태그입니다</b>");
+
+        //h2중 2번째에 text로 두번째 h2태그입니다 
+        $("h2").eq(1).text("<b>2번째 H2태그 입니다</b>");
+
+        //h2 마지막 태그에 html로 마지막 태그입니다 넣기 및 css(글꼴 색) 추가
+        $("h2").last().html("<b>마지막 H2 태그입니다</b>").css("color","green");
+
+        //append 뒤에 추가하기
+        $("h2:eq(0)").append("<img src='../flower_ani/f1.png'>");
+
+        //3번쨰 h2태그 뒤에 이미지 넣고 너비, 높이 100
+        
+        $("h2:eq(2)").append("<img src='../Food/1.jpg'>");          //따로따로 해줘야 함
+        $("h2:eq(2) img").css({
+            "width":"100px",
+            "heigth":"100px"
+        });
+
+        //이벤트
+        //첫번쨰 h2를 클릭시 자기가 가지고 있는 text를 alert로 반환
+        $("h2:eq(0)").click(function(){
+            alert($(this).text());
+        });
+
+        //마지막 h2 클릭시 자신의 html을 경고창에 반환
+        $("h2:eq(2)").click(function(){
+            alert($(this).html());
+        });
+    </script>
+</body>
+</html>

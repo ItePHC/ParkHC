@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <style>
+         #out{
+            position: absolute;
+            left: 10px;
+            top: 150px;
+            width: 400px;
+            height: 400px;
+            border: 1px solid gray;
+            background-color: blanchedalmond;
+            padding: 20px;
+        }
+    </style>
+
+    <script>
+        function click1(){
+            var imgArr = new Array(5);
+            imgArr[0]='../Food/11.jpg';
+            imgArr[1]='../Food/12.jpg';
+            imgArr[2]='../Food/9.jpg';
+            imgArr[3]='../Food/10.jpg';
+            imgArr[4]='../Food/8.jpg';
+
+            var r=document.getElementById("out");
+
+            var num=prompt("출력할 인덱스 번호를 입력해주세요.")
+            for(var i=0;i<imgArr.length;i++){
+                if(num==i){
+                    var img="<img width=300 height=300 src="+imgArr[i]+">";
+                    r.innerHTML=img;
+                    return;
+                }
+            }
+            r.innerHTML="해당번호는 없습니다.";
+        }
+    </script>
+</head>
+<body>
+    <form action="#" name="frm" >
+    <input type="button" id="btn1" name="img1" value="이미지출력" class="btn btn-black" onclick="click1()">
+
+    <div id="out"></div>
+</form>
+</body>
+</html>

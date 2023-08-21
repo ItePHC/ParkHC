@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            border: 1px solid black;
+            /*border-collapse: collapse;                      /*이중선 여백 삭제*/             
+        }
+    
+        tr, th, td {
+            border: 1px solid purple;
+        }
+    
+    </style>    
+</head>
+
+
+<body>
+    <table>
+        <!-- tr은 하나의 행 -->
+        <tr>
+            <th> 이름 </th>  <!-- th는 제목-->
+            <th> 학교 </th>
+            <th> 학과 </th>
+            <th> 학년 </th>
+        </tr>
+        <tr>
+            <td> 이민호 </td>
+            <td> 원주대학교 </td>
+            <td> 의과대학 </td>
+            <td> 3학년</td>
+        </tr>
+        <tr>
+            <td> 최지우 </td>
+            <td> 아주대학교 </td>
+            <td> 전기과 </td>
+            <td> 2학년</td>
+        </tr>
+        <tr>
+            <td> 박희찬 </td>
+            <td> 수원과학대학교 </td>
+            <td> 컴퓨터정보과 </td>
+            <td> 2학년</td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center"> 4칸 합침 </td>             <!-- colapan="n" : n칸만큼의 열 합침, rowspan="n" : n칸만큼의 행을 수직으로 합침 -->
+        </tr>
+
+
+    </table>
+</body>
+</html>
+
+

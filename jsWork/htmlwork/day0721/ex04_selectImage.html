@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sphoto{
+            width: 60px;
+            height: 60px;
+            border: 1px solid gray;
+            margin: 5px 5px;
+            cursor: pointer;
+        }
+        #photo_box{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 360px;
+            height: 520px;
+            border: 2px solid gray;
+            padding: 10px 10px;
+        }
+
+        #main_photo{
+
+            position: absolute;
+            left: 800px;
+            top: 100px;
+            width: 450px;
+            height: 550px;
+        }
+
+        #large_photo{
+            width: 400px;
+            height: 500px;
+            border: 10px inset gray;
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>문제2: 작은 이미지에 마우스를 올리면 큰 이미지가 바뀌는 이벤트 추가</h2>
+    <div id="photo_box">
+        <!-- 35개 이미지 -->
+        <script>
+            var photo = new Array();
+            for(var i=0;i<35;i++){
+                photo[i]='../쇼핑몰사진/'+(i+1)+'.jpg';
+            }
+            for(var i=0;i<35;i++){
+                if(i==22) continue;
+                document.write('<img src='+photo[i]+' class="sphoto">');
+            }
+        </script>
+    </div>
+    
+    <div id="main_photo">
+        <img src="../만화이미지/16.png" id="large_photo">
+    </div>
+
+    <script>
+        //document.getElementsByClassName("sphoto");
+        var sphoto=document.querySelectorAll(".sphoto"); //쿼리셀렉터는 # all은 .
+
+        //반복문안에서 ..마우스이벤트를 배열갯수만큼
+        for(var i=0;i<sphoto.length;i++){
+            sphoto[i].onmouseover=function(){
+                var large_p=document.getElementById("large_photo");              
+                large_p.setAttribute("src",this.getAttribute("src"));
+            }
+        }
+    </script>
+</body>
+</html>

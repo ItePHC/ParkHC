@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+
+        //  attr("속성") : 해당속성값 반환
+        //  attr("속성", "값") : 해당속성값으로 변경
+        //  eq(0): 0번 인덱스, 첫번째를 의미함
+
+        //  alert("처음 로딩시 호출!!")
+        //   $("#happy").css("color","red");
+
+        //위의것을 한줄로
+        $("#happy").css({
+            "color":"orange",
+            "background-color":"gray",
+            "width":"300px",
+            "border":"2px solid green"
+        });
+
+        //selector가 복잡할 경우에도 간단처리
+        $("div.hello>div").css({
+            "font-size":"2em",
+            "color":"purple",
+            "font-width":"bold"
+        
+
+        });
+
+        //happy의 배경색을 얻어서 div.hello의 글자색으로 적용
+        var bg = $("happy").css("background-color");
+        $("div.hello").css("color",bg);
+        // $("div.hello").css("color",$("happy").css("background-color"));
+        
+
+        //bts아래 image를 가로 150px로 바꿔라
+        $("div.bts>img").css("width","150px");
+
+        //hello아래 image를 가로 150px로 바꿔라
+        $("div.hello>img").css("width","150px");
+
+        //바디 전체글꼴
+        $("body*").css("font-family","궁서체");
+
+        //bts의 속성을 변경, 위치이동
+        $("div.bts").css({
+            "position":"absolute",
+            "left":"300px",
+            "top":"400px",
+            "width":"300px",
+            "height":"250px",
+            "border":"3px groove gold"
+        });
+
+        //모든 b태그 글자색 변경
+        $("b").css("color","green");
+
+        //b태그 중에서 1번,2번 인덱스만 변경
+        $("b:eq(1)").css("background-color","orange");  //방법 1
+        $("b").eq(2).css("background-color","pink");    //방법 2
+
+        //전체 b태그 중 첫번쨰 마지막 인덱스 변경
+        $("b:first").css("border","2px solid red");
+        $("b:last").css("border", "2px dotted");
+
+        // $("div:eq(3)").css("border","3px solid purple");
+        // $("h3.happy2").css("border","3px solid purple");
+
+        //gt(3):3번 이후 lt(3):3번 이전
+        $("b:gt(1)").css("font-size","30px");   //2번 인덱스부터 모두 변경
+        $("b:lt(2)").css("background-color","black");       //0, 1번 인덱스 변경
+    });
+    </script>
+</head>
+
+<body>
+    <div class="hello">
+        div class hello
+        <div>
+            div hello 아래 div
+        </div>
+    </div>
+    <div class="bts">
+        <b>div bts아래 b태그</b>
+        <img src="../Food/10.jpg">
+    </div>
+    <div class="hello">
+        div class hello2
+        <img src="../Food/1.jpg">
+        <div>div hello 아래의 div태그</div>
+    </div>
+    <b>단독 b태그#1</b><br>
+    <b>단독 b태그#2</b><br>
+    <b>단독 b태그#3</b><br>
+
+    <h2 id="happy">h2 is happy</h2>
+    <h3 class="happy2">h3 class happy2</h3>
+</body>
+</html>

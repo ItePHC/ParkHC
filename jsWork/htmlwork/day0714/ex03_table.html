@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tb2{
+            width: 400px;
+            border: 3px solid black;
+            border-collapse: collapse;
+
+        }
+
+        .tb2 td,.tb2 th {
+            border: 1px solid lightgray;
+        }
+
+        .tb2 tr th {
+            background-color: goldenrod;
+        }
+
+        .tb2 tr td:hover{
+            background-color: lightseagreen;
+            color: white;
+        }
+
+
+        .tb3{
+            width: 180px;
+            border: 3px solid black;
+         
+        }
+
+        .tb3 td,.tb3 th {
+            border: 1px solid rgba(51, 176, 28, 0.845);
+        }
+
+        .tb4{
+            width: 360px;
+            border: 3px solid black;
+         
+        }
+
+        .tb4 td,.tb4 th {
+            border: 1px solid rgba(51, 176, 28, 0.845);
+        }
+
+        
+</style>
+
+</head>
+
+
+
+<body>
+    <table border="1" style="width: 300px;">
+        <caption><b> [표 1]</b></caption>
+        <tr height = "50" bgcolor = "Orange">
+            <td align="center">하나</td>
+            <td align="right" valign = "top">둘</td>            <!-- valign : 높이 위치 -->
+            <td valign = "bottom" bgcolor="gray">셋</td>
+         </tr>
+         
+         <tr height = "50"  align="center">
+
+            <td colspan="3"><b>세칸합침</b></td>
+
+         </tr>
+
+    </table>
+
+    <table class = "tb2">
+        <caption><b>[표2]</b></caption>
+            <tr>
+                <th> 사진 </th>
+                <th> 이름 </th>
+                <th> 핸드폰 </th>
+                <th> 주소 </th>
+            </tr>
+
+            <tr>
+                <td rowspan="3">
+                    <img src="../Image/water.jpg">
+                </td>
+                <td> 이성신 </td>
+                <td> 010-2222-3333 </td>
+                <td> 서울시 </td>
+            </tr>
+
+            <tr>
+                
+                </td>
+                <td> 민규 </td>
+                <td> 010-4444-6666 </td>
+                <td> 안양시 </td>
+            </tr>
+            
+            <tr>
+                <td> 지현 </td>
+                <td> 010-5555-44444 </td>
+                <td> 인천시 </td>
+            </tr>
+        
+    </table>
+
+    <table class="tb3" >
+         <caption><b>[표 문제]</b></caption>
+             <tr style="height: 60px;">
+                <td rowspan="2" > 1 </td>      
+                <td colspan="2"> 2 </td>      
+                <td> 3 </td>  
+            </tr>
+            <tr style="height: 60px;">
+                <td colspan="3"> 4 </td>    
+            </tr>
+            <tr style="height: 60px;">
+                <td> 5 </td>    
+                <td> 6 </td>   
+                <td> 7 </td> 
+                <td> 8 </td>    
+            </tr>
+    </table>
+
+<br>
+
+    <table class="tb4" >
+            <tr style="height: 30px;">
+               <th> 이름 </th>      
+               <th> 사진 </th>      
+               <th> 신상정보 </th>  
+            </tr>
+
+            <tr>
+                <td  style="height: 45px;" rowspan="5"> 아이유 </td>
+                <td  style="height: 45px;" rowspan="5"> <img src="../Image/IU.jpg"> </td>
+                <td> 나이 : 31세 </td>
+            </tr>
+            <tr>
+                <td > 5 </td>   
+            </tr>
+            <tr>
+                <td > 5 </td>   
+            </tr>
+            <tr>
+                <td > 5 </td>   
+            </tr>
+            <tr>
+                <td > 5 </td>   
+            </tr>    
+   </table>
+    
+   
+
+
+</body>
+</html>

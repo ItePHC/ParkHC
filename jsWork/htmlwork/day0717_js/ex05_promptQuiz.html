@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 당신의 키는?
+        180
+        표준몸무계 : (키 - 100)*0.9
+        당신의 표준몸무계는 72kg입니다   
+    -->
+<script>
+    var height = prompt("당신의 키는?");
+    document.write("나의 키는 " + height + "cm 입니다<br>");
+    var weight = (parseInt(height) - 110) * 0.9;
+    
+    document.write("표준 몸무계는 "+weight+"kg 입니다<br>");
+    
+    // confirm
+    var ans = confirm("정말 삭제할까요?");
+    if(ans) {
+        // true는 기본값이므로 1을 무조건 부여할 필요는 없다 //if(ans) == if(ans == 1)
+        document.write("삭제되었습니다<br>");
+    }
+    else {
+        document.write("삭제가 취소되었습니다<br>")
+    }
+
+    //eval() : 문자열 내에서 연산 가능
+    var a = eval("10.5+10");
+       document.write(a+"<br>");                        //20.5
+       document.write(parseFloat(a)+parseInt(a)+"<br>")        //40.5  (float = double  // 20.5 + 20  => 40.5)
+
+    //prompt창에 구구단(원하는 단) 입력해서 출력해보자(for문 출력)
+    for(var su = number(prompt("단을 입력해주세요")); su<=9; su++){
+        for(var i = 1; i<=9; i++) {
+            document.write(su + "*" + i + "=" + su*i+"<br>")
+        }
+    };
+
+</script>
+    
+</body>
+</html>

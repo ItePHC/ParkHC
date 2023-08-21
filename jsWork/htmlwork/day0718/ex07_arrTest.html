@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>자바스크립트 배열 테스트</h3>
+    <script>
+        var food=["햄버거","피자","떡볶이","치킨","족발","삼겹살"];
+        document.write("배열테스트<br>");
+        
+        for(var i=0;i<food.length;i++)
+        {
+            //food[1]: 피자
+            document.write("food["+(i+1)+"]: "+food[i]+"<br>");
+        }
+    </script>
+
+    <h3>10개의 난수 출력</h3>
+    <script>
+        var rnd;
+
+        for(i=1;i<=10;i++)
+        {
+            rnd=parseInt(Math.random()*10)+1;
+            // document.write('<h5>'+rnd+'</h5>');  //h2태그로 출력  h태그는 br태그 안 써도 내려옴
+
+            //b태그로 2칸씩 떼어서 출력
+            document.write('<b>'+rnd+'</b>&nbsp;&nbsp;');
+        
+        }
+    </script>
+
+    <h3>자바스크립트 배열선언</h3>
+    <script>
+        var arr=new Array();
+        arr[0]="텀블러";
+        arr[1]="커피";
+        arr[2]="커피머신";
+        arr[3]="컵받침";
+
+        for(i=0;i<arr.length;i++)
+        {
+            document.write(arr[i]+'<br>');
+        }
+    </script>
+
+    <b style="color: red;">안녕</b>
+
+    <h3>배열선언_선언과 초기값 함께 지정</h3>
+    <script>
+            var arr2=['skyblue','lightpink','green','violet','blue','red'];
+
+            //hello를 b태그로 배열 갯수만큼 출력하기
+            
+            for(var i=0;i<arr2.length;i++)
+            {
+           // document.write("<b style='color:"+arr2[i]+"'>Hello</b><br>");
+
+           //h1태그로 해당색으로 출력하기 이름도 색, 색도 색
+
+           document.write("<h1 style='color:"+arr2[i]+"'>"+arr2[i]+"</h1>");
+                 
+           }
+
+
+    </script>
+
+    <h3>자바스크립트 배열 특징</h3>
+    <script>
+        var flowers=new Array();
+
+        flowers.push("개나리"); //배열 마지막에 추가
+        flowers.push("무궁화");
+        flowers.push("백합");
+        flowers.push("매화");
+
+    
+        //h1 태그로 배열 출력
+        for(var i=0;i<flowers.length;i++)
+        {
+            document.write("<h1>"+flowers[i]+"</h1>");
+        }
+
+        //제거
+        flowers.pop();  //마지막 배열 제거
+        flowers.pop();
+
+        flowers.shift();  //배열의 첫요소 제거
+
+        console.log(flowers);
+
+
+    </script>
+
+</body>
+</html>

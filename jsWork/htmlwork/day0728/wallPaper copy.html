@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Nanum+Pen+Script&family=Noto+Serif+KR:wght@200&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <title>Document</title>
+    <style>
+        li{
+            float: left;
+            list-style: none;
+            border: 5px solid #333;
+        }
+        body{
+            background-color: #fff;
+        }
+        div.wall{
+            width: 800px;
+            height: 600px;
+            background-color: #999;
+            /* background-image: url(""); */
+        }
+        h1.title{
+            font-size: 30px;
+            position: absolute;
+            left: 625px;
+            top: 60px;
+            width: 150px;
+            font-family: Nanum Pen Script;
+            font-weight: bold;
+        }
+        li img{
+            width: 100px;
+            cursor: pointer;
+        }
+        /* 제이커리에서 사용할 클래스 */
+        div.wall ul.list li.active{
+            border-color: magenta;
+        }
+        img.out{
+            position: absolute;
+            left: 250px;
+            top: 60px;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        //현재클릭한 이미지의 부모인 li에 클래스추가하기
+
+        //부모태그의 형제태그에 들어있는 active클래스 제거
+
+        //클릭한 곳의 title속성얻기
+
+        //얻은 title속성을 h1에 넣기
+
+        //클릭한곳의 이미지를 뒤의 벽지에 나타나게
+        $(function(){
+            $("ul img").click(function(){
+                $(this).parent().addClass("active");
+                $(this).parent().siblings().removeClass("active");
+                var ttl=$(this).attr("title");
+                var selsrc=$(this).attr("src");
+                $("h1").html(ttl);
+                $("div.wall").css("background-image","url("+selsrc+")");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wall">
+        <h1 class="title">Select Page</h1>
+        <img src="../jquery_img/cover2.png">
+        <ul class="list">
+            <li><img src="../jquery_img/b01.png" title="Pear"></li>
+            <li><img src="../jquery_img/b02.png" title="Checker"></li>
+            <li><img src="../jquery_img/b03.png" title="Bamboo"></li>
+            <li><img src="../jquery_img/b04.png" title="Pencle"></li>
+            <li><img src="../jquery_img/b05.png" title="Leaf"></li>
+            <li><img src="../jquery_img/b06.png" title="Woods"></li>
+        </ul>
+    </div>
+</body>
+</html>

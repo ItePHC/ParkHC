@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            
+            var btn1=document.getElementById("btn1");
+            var btn2=document.getElementById("btn2");
+            var btn3=document.getElementById("btn3");
+            var btn4=document.getElementById("btn4");
+            var btn5=document.getElementById("btn5");
+            var img1=document.getElementById("img1");
+
+            btn1.onclick=function(){
+                img1.setAttribute("src","../연예인사진/13.jpg");
+            }
+            btn2.onclick=function(){
+                img1.setAttribute("src","../연예인사진/20.jpg");
+            }
+            btn3.onclick=function(){
+                img1.setAttribute("src","../연예인사진/17.jpg");
+            }
+            btn4.onclick=function(){
+                var w=img1.getAttribute("width");
+                var w=parseInt(w);
+                w+=10;
+                img1.setAttribute("width",w);
+            }
+            btn5.onclick=function(){
+                var w=img1.getAttribute("width");
+                var w=parseInt(w);
+                w-=10;
+                img1.setAttribute("width",w);
+            }
+
+            var selimage=document.getElementById("selimage");
+            var photo=document.getElementById("photo");
+
+            var init_img=selimage.value;
+
+            //현재 사진의 src 속성 변경 초기이미지 설정
+            photo.setAttribute("src",init_img);
+
+            //select 이벤트 _change
+            selimage.onchange=function(){
+
+                //모든 이벤트 함수에는 이벤트 발생객체에 대한 this라는
+                //변수가 기본적으로 존재한다.
+                console.log(this.value);
+
+                //사진의 src에 this.value를 적용
+                photo.setAttribute("src",this.value);
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>이미지 변경 및 크기</h3>
+    <button type="button" id="btn1">박신혜</button>
+    <button type="button" id="btn2">유아인</button>
+    <button type="button" id="btn3">신민아</button><br><br>
+    <button type="button" id="btn4">점점크게</button>
+    <button type="button" id="btn5">점점작게</button>
+    <hr>
+    <img src="../만화이미지/15.png" width="300" id="img1" border="1">
+
+
+    <div class="container">
+        <div class="buttons">
+            <button type="button" id="btnsmall">점점작게</button>
+            <button type="button" id="btnlarge">점점크게</button>
+            <b style="margin-left: 20px;">사진선택</b>
+            <select id="selimage">
+                <option value="../만화이미지/04.png">만화4</option>
+                <option value="../만화이미지/05.png" selected>만화5</option>
+                <option value="../만화이미지/06.png">만화6</option>
+                <option value="../만화이미지/07.png">만화7</option>
+            </select>
+        </div>
+
+        <div>
+        <img src="" id="photo" width="150">
+        </div>
+
+    </div>
+
+    
+</body>
+</html>

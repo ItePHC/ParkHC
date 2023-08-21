@@ -1,0 +1,17 @@
+div.lottoball{
+
+        width: 100px;
+        height: 100px;
+        border: solid 3px green;  
+        border-radius: 60px ;   /*왼쪽 상단 모서리부터 시계방향*/
+        background-color: rgb(15, 202, 15);
+        font-size: 3em;
+        text-align: center;
+        line-height: 100px;
+        font-weight: bold;
+        color: white;
+        box-shadow: 10px 10px 10px gray;
+        margin-left: 20px;
+        margin-top: 20px;
+        float: left;
+}

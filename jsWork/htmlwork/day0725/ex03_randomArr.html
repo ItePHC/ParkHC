@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <img src="">
+    <img src="">
+    <img src="">
+    <img src="">
+    <img src="">
+
+    <script>
+        //모든 이미지에 같은 이미지 넣고 너비, 높이 border
+        $("img").attr("src","../만화이미지/03.png").css({
+            "width":"100px",
+            "height":"100px",
+            "border":"2px dotted green"
+        });
+
+        //랜덤이미지 5개 배열
+        var imgarr = new Array(5);
+
+        imgarr[0]="../만화이미지/01.png";
+        imgarr[1]="../만화이미지/05.png";
+        imgarr[2]="../만화이미지/07.png";
+        imgarr[3]="../만화이미지/09.png";
+        imgarr[4]="../만화이미지/11.png";
+
+        //img태그에 마우스를 올리면 5개의 랜덤 이미지 중에서 하나가 선택
+        $("img").mouseover(function(){
+            // set = $(this).attr("src");
+
+            // var rdnum = imgarr[parseInt(Math.random()*5)];
+            // $(this).attr("src",rdnum);
+            
+            var rdnum = parseInt(Math.random()*5);
+            $(this).attr("src",imgarr[(rdnum-1)]);
+        });
+        //마우스가 벗어나면 다시 원래의 이미지로 돌아온다
+        $("img").mouseleave(function(){
+            $(this).attr("src","../만화이미지/03.png");
+        });
+    </script>
+</body>
+</html>

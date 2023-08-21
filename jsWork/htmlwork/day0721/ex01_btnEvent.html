@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #photo{
+            position: absolute;
+            left: 500px;
+            top: 200px;
+            width: 400px;
+            height: 500px;
+            border: 10px groove gray;
+        }
+    
+
+        #btnRandom{
+            margin-left: 500px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            var imgArr =new Array();
+
+            for(var i=0;i<19;i++){
+                imgArr[i]="../연예인사진/"+(i+1)+".jpg";
+            }
+
+            var random = document.getElementById("btnRandom");
+            var photo = document.getElementById("photo");
+            random.onclick=function(){
+                var ran=parseInt(Math.random()*19);
+                photo.setAttribute("src",imgArr[ran]);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <input type="image" src="../만화이미지/16.png" id="btnRandom">
+    <b>이미지 버튼을 누르면 이미지 바뀝니다.</b>
+
+    <img src="" id="photo">
+
+</body>
+</html>

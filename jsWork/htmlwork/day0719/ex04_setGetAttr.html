@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .simg{
+            width: 100px;
+            height: 120px;
+            border-radius: 20px;
+        }
+        .result{
+
+            width: 300px;
+            height: 350px;
+        }
+
+        #simg_div{
+            position: absolute;
+            left: 800px;
+            top: 100px;
+            cursor: pointer;
+        }
+
+        #result_div>img{
+            position: absolute;
+            left: 650px;
+            top: 300px;
+            width: 500px;
+            height: 600px;
+            border-radius: 20px;
+            
+        }
+    </style>
+    <script>
+
+        //id 읽기
+        window.onload=function(){
+
+            var img1=document.getElementById("img1");
+            var img2=document.getElementById("img2");
+            var img3=document.getElementById("img3");
+            var img4=document.getElementById("img4");
+            var img5=document.getElementById("img5");
+            var imgresult=document.getElementById("imgresult");
+           
+            //이벤트 주기
+            img1.onclick=function(){
+
+            //속성값 변경
+            imgresult.setAttribute("src",img1.getAttribute("src"));
+          
+            }
+
+            img2.onclick=function(){
+            
+            imgresult.setAttribute("src",img2.getAttribute("src"));
+
+            }
+
+            img3.onclick=function(){
+            
+            imgresult.setAttribute("src",img3.getAttribute("src"));
+
+            }
+
+            img4.onclick=function(){
+            
+            imgresult.setAttribute("src",img4.getAttribute("src"));
+
+            }
+
+            img5.onclick=function(){
+            
+            imgresult.setAttribute("src",img5.getAttribute("src"));
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <div id="simg_div">
+        <img src="../연예인사진/1.jpg" id="img1" class="simg">
+        <img src="../연예인사진/19.jpg" id="img2" class="simg">
+        <img src="../연예인사진/9.jpg" id="img3" class="simg">
+        <img src="../연예인사진/14.jpg" id="img4" class="simg">
+        <img src="../연예인사진/16.jpg" id="img5" class="simg">
+    </div>
+
+    <div id="result_div">
+        <img src="../연예인사진/1.jpg" class="result" id="imgresult">
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="one">
+        첫번째 div    
+        <div class="hana">div하나</div>
+        <div>둘</div>
+        <div>셋</div>
+        <h3>h3 Tag</h3>
+        <h4>h4 Tag</h4>
+    </div>
+    <div class="two">
+        두번째 div    
+        <div class="hana">div하나</div>
+        <div>둘</div>
+        <div>셋</div>
+        <h3>h3 Tag</h3>
+        <h4>h4 Tag</h4>
+    </div>
+    
+    <script>
+        //parent() : 부모태그
+        //siblings() : 형제태그
+        //children() : 자식태그
+
+        $("div.one div.hana").siblings().css("color","red");
+        $("div").children("div.hana").css("text-decoration","underline");
+        $("div.hana").next().next().css("background-color","pink");
+        //two의 h3에 보더
+        $("div.two").children("h3").css("border","2px dotted black")
+        // $("div.two").find("h3").css("border","2px dotted black")
+
+        //이벤트
+        
+
+        $("div.one").click(function(){
+            // $(this).find("div").hide('slow');                   //선택하는 태그를 숨김
+            // $(this).siblings().find("div").hide('slow');    //형제인 "div.two"에서 div가 들어간 태그를 숨김
+        });
+
+        // two라는 div 중에서 div 태그를 숨겨라 (자기자식 div, 형제자식 div)
+        $("div.two").click(function(){
+            // $(this).find("div").hide('slow');
+            $(this).children().hide('slow');     //에러발생---> children으로 범위 설정시 .find("") 사용 불가 -> children : 하위항목 전체 / find("") : 하위항목 중 원하는 부분
+            // $(this).siblings().find("div").hide('slow');
+        });
+
+        
+    </script>
+</body>
+</html>

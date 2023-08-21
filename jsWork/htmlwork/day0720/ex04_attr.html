@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 500px;
+            height: 150px;
+            line-height: 150px;
+            font-size: 22px;
+            text-align: center;
+            border: 2px solid gray;
+            margin-top: 20px;
+            background: url('../만화이미지/03.png') no-repeat right bottom;
+            background-size: 100px 120px;
+        }
+
+        #imga{
+            border: 5px inset tomato;
+            margin: 30px 150px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+
+            //div 요소값
+            var r=document.getElementById("result");
+
+            //img 요소값
+            var photo=document.getElementById("imga");
+
+            //버튼1이벤트
+            document.getElementById("btn1").onclick=function(){
+                var num=prompt("이미지 너비 입력");
+                if(num==null){
+                    alert("변경하지 않을래요");
+                }
+                else if(num==""){
+                    alert("입력x")
+                }
+                else{
+                    var yn=confirm("이미지 변경하시겠습니까?")
+                    if(yn==1){
+                        photo.setAttribute("width",num);
+                }
+                //var width=photo.getAttribute(num);
+                    else{
+                        alert("취소하였습니다.");
+                    }
+                }
+
+            }
+            //버튼2 이벤트
+            //버튼2 누르면 prompt창에 1~20사이의 연예이 사진번호 입력
+            //취소시 경고창에 지금 사진아 좋아요 안바꿀래요
+            //21번을 누르면 1~20까지 밖에없다구요.. 함수종료(return)
+            //1이라고 하면 사진 바뀜
+            document.getElementById("btn2").onclick=function(){
+                var num=prompt("바꿀 인덱스 값 입력 (1~20만 가능)");
+                if(num==null){
+                    alert("지금 사진아 좋아요 안바꿀래요");
+                }
+                else if(num==""){
+                    alert("입력도 안했으면서..");
+                }
+                else{
+                    if(num>=1&&num<=20){
+                        if(num<10){
+                            var img111="../만화이미지/0"+num+".png";
+                            photo.setAttribute("src",img111);
+                        }
+                        else{
+                            var img121="../만화이미지/"+num+".png";
+                            photo.setAttribute("src",img121);
+                        }
+                    }
+                    else{
+                        alert("1~20까지 밖에없다구요..");
+                        return;
+                    }
+                }
+            }
+
+            document.getElementById("btn3").onclick=function(){
+                var name=prompt("당신의 이름은?");
+                //innerText: text를 넣는다(태그가 노출)
+                //innerHTML: html을 넣는다(태그가 적용)
+
+                if(name==null){
+                    document.getElementById("result").innerText="<u>취소를 눌렀네요!!</u>";
+                }
+                else{
+                    r.innerHTML="<u>당신의 이름은 "+name+"이군요!!</u>";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <button type="button" class="btn btn-blueviolet" id="btn1">이벤트#1</button>
+    <button type="button" class="btn btn-blueviolet" id="btn2">이벤트#2</button>
+    <button type="button" class="btn btn-blueviolet" id="btn3">이벤트#3</button>
+    <div id="result">test</div>
+    <img src="../만화이미지/05.png" width="150" id="imga">
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+
+    <style>
+        div.box{
+            border: 2px solid green;
+            margin-top: 20px;
+            width: 300px;
+            height: 150px;
+            font-family: 'Dongle';
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>배열 반복시 사용하는 $.each</h3>
+    <script>
+        var data = ["red","orange","gray","blue","pink"];
+
+        //(배열명, 콜 백 함수(function(i,ele))) 입력 (ele 필수 입력)
+        $.each(data, function(i,ele){               // i : 인덱스 / ele : 엘리먼트(i에 해당하는 아이템 값)
+            var s = "<h2 style='color:"+ele+"'; width:200px>"+ele+"</h2>"
+            document.write(s);
+        });          
+    </script>
+
+    <div id="show"></div>
+    <script>
+        var info =[{name:"김영준", hp:"010-1111-2222", addr:"서울시"},
+        {name:"송주영", hp:"010-3333-4444", addr:"대구시"},
+        {name:"최진평", hp:"010-5555-6666", addr:"부산시"}];
+        var s ="";
+        $.each(info,function(i,element){
+            s+="<div class='box'>";
+            s+="이름 : " +element.name+"<br>";
+            s+="핸드폰 : " +element.hp+"<br>";
+            s+="주소 : " +element.addr+"<br>";
+            s+="</div>";
+        });
+        $("#show").html(s);
+        
+    </script>
+
+</body>
+</html>
