@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div style="margin: 30px; 30px; width: 400px;">
-		<form action="addAction.jsp" method="psot">
+		<form action="addAction.jsp" method="post">
 			<table class="table table-bordered">
 				<caption align="top"><b><i class="bi bi-pencil"></i>글쓰기</b></caption>
 				<tr>
