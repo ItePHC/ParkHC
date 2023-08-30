@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+@use './components/responsive';
+@use './components/text';
+@use './components/button';
+@use './components/grid';
+@use './components/flex';
+@use './components/area';
+@use './components/form';
+@use './components/list';
+@use './components/icon/_icon';
+@use './components/board';
+@use './components/popup';
+@use './components/loading';
+@use './components/page';
+@use './components/search';
+@use './components/table';
+
+[class^="iconFt_"], [class*=" iconFt_"] {
+	&:before,&:after{
+		display: inline;
+	}
+}

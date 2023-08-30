@@ -1,0 +1,87 @@
+@use "sass:math";
+@use '../../common/' as *;
+
+//
+// color           : color mixin (btn color)
+// date            : 2021.07.27
+///
+/// @param {color} $bg          :
+/// @param {color} $text        :
+/// @param {color} $border      :
+/// @param {color} $bg-hover    : hover
+/// @param {color} $text-hover  : hover
+/// @param {color} $border-hover: hover
+///
+@mixin color($bg, $text, $border , $bg-hover : $bg, $text-hover  : $text, $border-hover  : $border) {
+  background: $bg;
+
+  color: $text;
+
+  border-color: $border;
+
+  &:hover {
+
+      @if $bg-hover {
+        background: $bg-hover;
+      }
+
+      @if $text-hover {
+        @if $bg-hover  == $text-hover {
+            color: #222;
+        }@else {
+            color: $text-hover;
+        }
+      }
+
+      @if $border-hover {
+          border-color:$border-hover;
+      }
+  }
+}
+
+// size            : size mixin (btn size)
+// date            : 2021.07.27
+///
+/// @param {color} $fs          : fs
+/// @param {color} $width       : w
+/// @param {color} $height      : h
+///
+@mixin size($fs : 16, $width : 200, $height : 60){
+  font-size   : rem($fs);
+  width       : rem($width);
+  height      : rem($height);
+  line-height : rem( ($height - 2));
+  padding : {
+    left : rem(16);
+    right: rem(16);
+  }
+  @content;
+}
+
+
+@mixin item() {
+
+  overflow: hidden;
+  display: inline-block;
+
+  font-weight: 500;
+
+  letter-spacing: 0;
+
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+
+  border: 2px solid #ddd;
+  background-color: #ffffff;
+  cursor: pointer;
+
+  @include vendor(transition, 'background 0.2s linear, color 0.2s linear, border 0.2s linear');
+
+  >span {
+   position: relative;
+  }
+
+  @content;
+
+}

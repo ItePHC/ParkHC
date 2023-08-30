@@ -1,0 +1,110 @@
+@use "sass:math";
+@use 'common/' as *;
+@use 'common/color' as color;
+@use 'common/variables' as var;
+@use 'components/flex/mixin' as flex;
+@use 'components/icon/mixin' as icon;
+@use 'components/button/mixin' as btn;
+@use 'components/form/mixin' as form;
+
+html, body{
+	width: 100%;
+	height: 100%;
+	touch-action: pan-y;
+}
+body{
+	position: relative;
+	height: auto;
+	min-height: 100%;
+}
+
+.container{
+	&{
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+	img{
+		max-width: 100%;
+	}
+	&.etc {
+		padding-top: rem(var.$headerH);
+		@include mob {
+			padding-top: rem(58);
+		}
+	}
+}
+
+#con{
+	display: block;
+}
+
+#skipNav {
+	a { position: absolute;
+		display: block;
+		font-size: 0px;
+		top: -9999px;
+		left: -9999px;
+	}
+	a:focus { position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		background: #333;
+		color: #fff;
+		font-size: 20px;
+		z-index: 9999;
+		text-align: center;
+	}
+}
+
+.con {
+    &_tit1 {
+        font-size: em(54);
+        font-weight: 600;
+        margin-bottom: em(40, 54);
+		// font-family: "Montserrat", "Pretendard",sans-serif;
+    }
+    &_tit2 {
+        font-size: em(30);
+        font-weight: 600;
+    }
+    &_tit3 {
+        font-size: em(24);
+        font-weight: 600;
+        margin-bottom: em(31, 24);
+		@include mob {
+			font-size: em(20);
+		}
+    }
+    &_txt1 {
+        font-size: em(24);
+        font-weight: 600;
+        margin-bottom: em(50, 24);
+    }
+	@include mob {
+		&_tit1 {
+			font-size: em(30);
+			margin-bottom: em(24, 30);
+		}
+		&_tit2 {
+			font-size: em(24);
+	    }
+		&_txt1 {
+	        font-size: em(18);
+	        margin-bottom: em(32, 18);
+	    }
+	}
+}
+
+
+
+@import 'components/layout/header';
+@import 'components/layout/allMenu';
+@import 'components/layout/side_menu';
+@import 'components/layout/vancy_pop';
+@import 'components/layout/floating_menu';
+@import 'components/layout/allSearch';
+@import 'components/layout/footer';

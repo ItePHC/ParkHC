@@ -1,0 +1,306 @@
+#vancyPop {
+    background-color: #fff;
+    position: fixed; top: 0; left: 0;
+    width: calc(100%);
+    height: calc(var(--vh, 1vh) * 100);
+    padding: em(32) em(42);
+    z-index: 1006;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(200%);
+    transition: transform .35s ease-out;
+    // @include pc-only {
+    //     &::after {
+    //         content:''; display: block;
+    //         position: absolute; top: 0; left: 100%;
+    //         width: em(494); height: 100%;
+    //         background-color: map-get(color.$colors, 2);
+    //     }
+    // }
+
+    &.on {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    .vancy_logo {
+        height: em(36);
+        svg {
+            height: 100%;
+            width: auto;
+            max-width: none;
+        }
+    }
+    .vancy_{
+        &wrap {
+            position: relative;
+            overflow-y: auto;
+            max-height: 100%;
+        }
+        &box {
+            padding: 0 em(32);
+            overflow: hidden;
+        }
+        &close {
+            position: absolute;
+            top: 0; right: 0;
+            width: em(41); height: em(41);
+            @include flex.flex-box;
+            @include flex.align-items('center');
+            @include flex.justify-content('center');
+            svg {
+                width: em(23); height: em(23);
+            }
+        }
+        &tit {
+            font-size: em(34);
+            letter-spacing: -.85px;
+            text-align: center;
+            margin: {
+                top: em(62, 34);
+                bottom: em(40, 34);
+            }
+        }
+        &lists {
+            background-color: #f8f8f8;
+            padding: em(60) em(40);
+        }
+        &items {
+            display: none;
+            &:not(.btn) {
+                @include flex.flex-wrap('wrap');
+                margin: {
+                    top: em(-8);
+                    left: em(-4);
+                    right: em(-4);
+                }
+            }
+            &.btn {
+                @include flex.align-items('center');
+                @include flex.justify-content('center');
+                margin: {
+                    left: auto; right: auto;
+                }
+            }
+            &.on {
+                @include flex.flex-box;
+            }
+            &[data-set$="2"] {
+                & > li {
+                    width: 16.6666666%;
+                    max-width: 16.6666666%;
+                }
+            }
+            & > li {
+                width: 11.111111111111%;
+                max-width: 11.111111111111%;
+                // flex: 1 1 auto;
+                padding: em(8) em(4) 0 ;
+                // min-width: em(100);
+                @include pc-only {
+                    &.line {
+                        display: none;
+                    }
+                }
+                &.line {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    hr { border-color: #ddd; }
+                }
+                &.full {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                }
+            }
+            .vancy_item {
+                @include flex.flex-box;
+                @include flex.justify-content('center');
+                @include flex.align-items('center');
+                width: 100%; height: em(60);
+                border: 1px solid color.$color-border;
+                background-color: #eee;
+                color: #ccc;
+                pointer-events: none;
+                cursor: normal;
+                touch-action: none;
+                &.ing {
+                    background-color: #b2b2b2;
+                    color: #ddd;
+                }
+                &.poss {
+                    background-color: map-get(color.$colors, 1);
+                    color: #fff;
+                    pointer-events: none;
+                    cursor: normal;
+                    touch-action: none;
+                }
+            }
+        }
+        &infos {
+            margin-top: em(24);
+            @include flex.flex-box;
+            @include flex.justify-content('space-between');
+            font-size: em(14, 16);
+            letter-spacing: -.35px;
+            .vancy_info {
+                @include flex.flex-box;
+                @include flex.align-items('center');
+                margin-right: em(20);
+                color: #121212;
+                & > span {
+                    @include flex.flex-box;
+                    @include flex.align-items('center');
+                    &::before {
+                        content:''; display: block;
+                        width: em(12, 14); height: em(12, 14);
+                        margin-right: em(8, 14);
+                    }
+                    margin-right: em(24, 14);
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                .poss::before { background-color: map-get(color.$colors, 1); }
+                .ing::before { background-color: #b2b2b2; }
+                .cons::before { background-color: #eee; border: 1px solid color.$color-border; }
+            }
+            .vancy_etc {
+                margin-left: em(20);
+                color: #888;
+            }
+        }
+    }
+    .more_btns {
+        margin-top: em(40);
+        text-align: center;
+    }
+    @include tab {
+        overflow-y: auto;
+        // font-size: em(28);
+        padding: {
+            top: em(36, 28);
+            bottom: em(36, 28);
+            left: em(32, 28);
+            right: em(32, 28);
+        }
+        .vancy_logo {
+            width: em(360, 28);
+            height: em(44, 28);
+        }
+        .vancy_box {
+            padding: {
+                left: 0;
+                right: 0;
+            }
+            .twin_tab {
+                .txt {
+                    font-size: em(36, 28);
+                }
+            }
+        }
+        .vancy_lists {
+            padding: em(32, 28);
+        }
+        .vancy_items {
+            & > li {
+                width: 33.333%;
+                max-width: 33.3333%;
+            }
+            &[data-set$="2"] {
+                & > li {
+                    width: 33.333%;
+                    max-width: 33.333%;
+                }
+            }
+        }
+        .vancy_infos {
+            @include flex.flex-wrap('wrap');
+            margin-top: em(48, 28);
+            margin-bottom: em(32, 28);
+            .vancy_info {
+                width: 100%;
+                @include flex.justify-content('center');
+                margin-right: 0;
+            }
+            .vancy_etc {
+                @include flex.justify-content('center');
+                margin-top: em(32, 28);
+                margin-left: 0;
+            }
+        }
+    }
+    @include mob {
+        font-size: em(14);
+        .vancy_wrap {
+            padding-bottom: em(80, 14);
+        }
+    }
+}
+
+
+.twin_tab {
+	@include flex.flex-box;
+	@include flex.align-items('stretch');
+	border: 1px solid color.$color-border;
+	overflow: hidden;
+	position: relative;
+    background-color: #fff;
+	.lnk {
+		@include flex.flex-box;
+		@include flex.align-items('center');
+		@include flex.justify-content('center');
+		width: 50%; height: em(72);
+		transition: color .6s;
+		font-weight: bold;
+		color: #b2b2b2;
+		&.on {
+			color: #fff;
+		}
+		.txt {
+			position: relative;
+			z-index: 3;
+			font-size: em(18, 16);
+		}
+	}
+    &.st2 {
+        .lnk.on:first-child {
+            & ~ .shadow { left: -50%; }
+        }
+        .lnk.on:nth-child(2) {
+            & ~ .shadow { left: 150%; }
+        }
+        .lnk {
+            .txt { font-size: 1em; }
+        }
+        .shadow {
+            background-color: map-get(color.$colors, 1);
+        }
+    }
+    &.st3 {
+        .lnk.on{
+            position: relative;
+            &::before {
+                content:''; display: block;
+                position: absolute; top: 0; left: 0;
+                width: 100%; height: 100%;
+                transform: scaleX(1.125) skewX(-25deg);
+                background-color: map-get(color.$colors, 1);
+                @include mob {
+                    transform: scaleX(1.175) skewX(-15deg);
+                }
+            }
+        }
+        & + .con_tit {
+            margin-top: em(56, 36);
+        }
+    }
+	.shadow {
+		display: block;
+		position: absolute; top: 50%; left: -50%;
+		width: 200%; height: calc(100% + 2px);
+		transform: translate(-50%, -50%) skewX(-25deg) scaleX(1);
+		background-color: map-get(color.$colors, 2);
+		z-index: 2;
+		transition: all .6s;
+	}
+}

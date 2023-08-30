@@ -1,0 +1,53 @@
+@use '../../common/' as *;
+@use '../../common/color' as color;
+
+.bg_1{
+    background-color: #ffffff;
+}
+
+.bg_2{
+    background-color: #f8f8f8;
+}
+
+.bg_3{
+    background-color: #fff2dc;
+}
+
+.bg{
+	@each $name, $color in color.$colors {
+		&_c#{$name}{
+			background-color: $color;
+		}
+	}
+}
+
+.line_box{
+	border: 1px solid color.$color-border;
+	&:not(.p_0){
+		padding: rem(24);
+	}
+}
+.line_box2{
+	border-top: 2px solid #222;
+	border-bottom: 1px solid color.$color-border;
+	&:not(.p_0){
+		padding: rem(24);
+	}
+	@each $name, $color in color.$colors {
+		&.c_#{$name}{border-top-color: $color;}
+	}
+}
+[class*=line_box] {
+    @for $i from 1 to 10 {
+        &.p_#{$i * 5} {
+            padding: rem(5 *  $i);
+        }
+    }
+    @include mob {
+        @for $i from 1 to 10 {
+            &.p_sm_#{$i * 5} {
+                padding: rem(5 *  $i);
+            }
+        }
+    }
+}

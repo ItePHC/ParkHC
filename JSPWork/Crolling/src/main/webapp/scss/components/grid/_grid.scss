@@ -1,0 +1,84 @@
+
+@use "sass:math";
+@use '../../common/variables' as var;
+@use '../../common/' as *;
+$_coloum : 24;
+
+
+@mixin _wp($size) {
+    margin: {
+        top:rem($size * -1);
+        left:rem($size * -0.5);
+        right:rem($size * -0.5);
+    }
+    > [class*=col_] {
+        padding: rem($size) rem($size * 0.5 ) 0;
+    }
+
+}
+.row{
+    min-width: 100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+
+    //기본 row
+    -webkit-box-orient:horizontal;
+    -ms-flex-direction:row;
+    flex-direction:row;
+
+    -ms-flex-wrap:wap;
+    flex-wrap:wrap;
+
+    > [class*=col_] {
+        flex: 0 1 auto;
+    }
+
+    @each $wrap in var.$padding-wraps {
+        &.wp_#{$wrap}{
+            @include _wp($wrap);
+            @include mob{
+                $mSize : $wrap * 0.5;
+                @include _wp($mSize);
+            }
+        }
+    }
+    @include tab(true) {
+        @each $wrap in var.$padding-wraps {
+            &.wp_md_#{$wrap}{
+                @include _wp($wrap);
+            }
+        }
+    }
+    @for $i from $_coloum to -1  {
+        > .col_#{$i}{width: math.div(100% , $_coloum) * $i;}
+    }
+    @for $i from $_coloum to -1  {
+        > .offset_#{$i}{margin-left: math.div(100% , $_coloum) * $i;}
+    }
+
+    @include tab {
+        @for $i from $_coloum to -1  {
+            > .col_md_#{$i}{width: math.div(100%, $_coloum) * $i;}
+        }
+        @for $i from $_coloum to -1  {
+            > .offset_md_#{$i}{margin-left: math.div(100%, $_coloum) * $i;}
+        }
+    }
+    @include mob {
+        @for $i from $_coloum to -1  {
+            > .col_sm_#{$i}{width: math.div(100%, $_coloum) * $i;}
+        }
+        @for $i from $_coloum to -1  {
+            > .offset_sm_#{$i}{margin-left: math.div(100%, $_coloum) * $i;}
+        }
+    }
+    @include mob-mid {
+        @for $i from $_coloum to -1  {
+            > .col_xsm_#{$i}{width: math.div(100%, $_coloum) * $i;}
+        }
+        @for $i from $_coloum to -1  {
+            > .offset_xsm_#{$i}{margin-left: math.div(100%, $_coloum) * $i;}
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@mixin flex-box() {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+}
+
+@mixin flex-wrap ($value) {
+    @if $value == 'wrap'{
+        -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
+    }
+
+    @else if $value == 'nowrap'{
+        -webkit-box-lines:single;
+        -ms-flex-wrap:nowrap;
+        flex-wrap:nowrap;
+    }
+}
+@mixin flex-direction ($value) {
+    @if $value == 'column'{
+        -webkit-box-orient:vertical;
+        -ms-flex-direction:column;
+        flex-direction:column;
+    }
+    @else if $value == 'row-reverse'{
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:reverse;
+        -ms-flex-direction:row-reverse;
+        flex-direction:row-reverse;
+    }
+    @else if $value == 'column-reverse'{
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:reverse;
+        -ms-flex-direction:column-reverse;
+        flex-direction:column-reverse;
+    }
+    @else if $value == 'row'{
+        -webkit-box-orient:horizontal;
+        -ms-flex-direction:row;
+        flex-direction:row;
+    }
+}
+
+@mixin justify-content ($value) {
+    @if $value == 'flex-start'{
+        -webkit-box-pack:start;
+        -ms-flex-pack:start;
+        justify-content:flex-start;
+    }
+
+    @else if $value == 'flex-end'{
+        -webkit-box-pack:end;
+        -ms-flex-pack:end;
+        justify-content:flex-end;
+    }
+
+    @else if $value == 'center'{
+        -webkit-box-pack:center;
+        -ms-flex-pack:center;
+        justify-content:center;
+    }
+
+    @else if $value == 'space-between'{
+        -webkit-box-pack:space-between;
+        -ms-flex-pack:space-between;
+        justify-content:space-between;
+    }
+}
+
+@mixin align-items ($value) {
+    //세로정렬
+    @if $value == 'flex-start'{
+        -webkit-box-align:start;
+        -ms-flex-align:start;
+        align-items:flex-start;
+    }
+    @else if $value == 'flex-end'{
+        -webkit-box-align:end;
+        -ms-flex-align:end;
+        align-items:flex-end;
+    }
+    @else if $value == 'center'{
+        -webkit-box-align:center;
+        -ms-flex-align:center;
+        align-items:center;
+    }
+    @else if $value == 'stretch'{
+        -webkit-box-align:stretch;
+        -ms-flex-align:stretch;
+        align-items:stretch;
+    }
+    @else if $value == 'baseline'{
+        -webkit-box-align:baseline;
+        -ms-flex-align:baseline;
+        align-items: baseline;
+    }
+}

@@ -1,0 +1,111 @@
+@use '../../common/variables' as var;
+@use '../../common/' as *;
+
+//
+// icon-box        : icon-box mixin
+// date            : 2020.07.27
+///
+/// @param {string} $icon-name         : 이름
+/// @param {string} $icon-url          : 경로
+/// @param { } $icon-width             : 가로
+/// @param { } $icon-height            : 높이
+/// @param {string} $icon-bg-size      : 배경 사이즈
+///
+@mixin icon-box(
+    $icon-name,
+    $icon-url :null,
+    $icon-width : auto,
+    $icon-height : auto,
+    $icon-bg-size : cover,
+){
+i.icon_#{$icon-name}{
+    @if $icon-url{
+        background-image   : url(quote(#{$icon-url}));
+    }
+        background-size    : $icon-bg-size;
+        width              : $icon-width;
+        height             : $icon-height;
+    }
+}
+
+/*icon*/
+i[class*=icon_], i[class^=icon_]{
+    display: inline-block;
+    text-align: center;
+    text-indent: -9999px;
+    font-size: 1px;
+    overflow: hidden;
+    width: 20px; height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    vertical-align: middle;
+}
+
+[class^="iconFt_"], [class*=" iconFt_"] {
+    &::before{
+        display: inline
+    }    
+}
+
+ @for $i from 1 to 8 {
+    @include icon-box("0#{$i}", "/resource/images/common/icon/icon_0#{$i}.png", rem(70), rem(70), contain);
+ }
+
+
+
+ i.icon_{
+    @for $i from 1 to 12 {
+        @if $i <= 9{
+        &0#{$i}{
+            background-image: url("/resource/images/common/icon/icon_0#{$i}.png"); background-size: contain; width: rem(70); height: rem(70);
+        }
+        }
+        @else{
+            &#{$i}{
+                background-image: url("/resource/images/common/icon/icon_#{$i}.png"); background-size: contain; width:rem(70); height: rem(70);
+            }
+        }
+        
+    }
+}
+
+i.icon_{
+    &content{
+        width:rem(36);
+        height:rem(36);
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cpath d='M0 0h36v36H0z' style='fill:none'/%3E%3Cpath d='M27.006 3h-6.272a4.483 4.483 0 0 0-8.462 0H6a3.009 3.009 0 0 0-3 3v24a3.009 3.009 0 0 0 3 3h21a3.009 3.009 0 0 0 3-3V6a3.009 3.009 0 0 0-2.994-3zM16.5 3A1.5 1.5 0 1 1 15 4.5 1.5 1.5 0 0 1 16.5 3zM27 30H6V6h3v4.5h15V6h3z' transform='translate(1.497)' style='fill:%23fff'/%3E%3Cpath transform='translate(11 16)' style='fill:%232fe5f2' d='M0 0h14v3H0z'/%3E%3Cpath transform='translate(11 21)' style='fill:%232fe5f2' d='M0 0h14v3H0z'/%3E%3C/svg%3E");
+    }
+    &paper{
+        width:rem(36);
+        height:rem(36);
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cpath data-name='Path 509' d='M0 0h36v36H0z' style='fill:none'/%3E%3Cpath data-name='Subtraction 1' d='M-630-4879h-18.02a3 3 0 0 1-2.985-3v-24a3 3 0 0 1 3-3h12l9 9v18a3 3 0 0 1-2.995 3zm-18-27v24h18v-16.5h-7.5v-7.5z' transform='translate(657.007 4911.998)' style='fill:%23fff'/%3E%3Cpath data-name='Intersection 13' d='M-645.009-4885v-3h12v3zm0-6v-3h12v3z' transform='translate(657.007 4911.999)' style='fill:%232fe5f2'/%3E%3C/svg%3E%0A");
+    }
+    &talks{
+        width:rem(36);
+        height:rem(36);
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cpath data-name='Path 25' d='M0 0h36v36H0z' style='fill:none'/%3E%3Cpath data-name='Path 26' d='M28.979 2H5a3.007 3.007 0 0 0-3 3v26.977l6-6h20.979a3.007 3.007 0 0 0 3-3V5a3.007 3.007 0 0 0-3-3zm0 20.984H8l-3 3V5h23.979zM9.494 12.492h3v3h-3zm6 0h3v3h-3zm6 0h3v3h-3z' transform='translate(1.012 1.012)' style='fill:%23fff'/%3E%3Cpath data-name='Intersection 5' d='M-706.945-449.01v-3h3v3zm-6 0v-3h3v3zm-5.995 0v-3h3v3z' transform='translate(729.442 465.512)' style='fill:%232fe5f2'/%3E%3C/svg%3E%0A");
+    }
+    &registration{
+        width:rem(36);
+        height:rem(36);
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cg data-name='Group 15'%3E%3Cpath data-name='Rectangle 59' style='fill:none' d='M0 0h36v36H0z'/%3E%3C/g%3E%3Cg data-name='Group 17'%3E%3Cg data-name='Group 16'%3E%3Cpath data-name='Rectangle 60' transform='translate(15 6)' style='fill:%23fff' d='M0 0h6v6H0z'/%3E%3Cpath data-name='Rectangle 61' transform='translate(6 25)' style='fill:%23fff' d='M0 0h6v6H0z'/%3E%3Cpath data-name='Rectangle 62' transform='translate(6 15)' style='fill:%23fff' d='M0 0h6v6H0z'/%3E%3Cpath data-name='Rectangle 63' transform='translate(6 6)' style='fill:%23fff' d='M0 0h6v6H0z'/%3E%3Cpath data-name='Rectangle 64' transform='translate(25 6)' style='fill:%23fff' d='M0 0h6v6H0z'/%3E%3Cpath data-name='Path 18' d='M11 20.922v3.241h3.181l9.058-9.043-3.211-3.21z' transform='translate(5.662 6.13)' style='fill:%232fe5f2'/%3E%3Cpath data-name='Path 19' d='M16.059 13.075V10H10v6.059h3.075z' transform='translate(5.147 5.147)' style='fill:%23fff'/%3E%3Cpath data-name='Path 20' d='m22.487 12.363-2.136-2.136a.75.75 0 0 0-1.075 0l-1.606 1.606 3.211 3.211 1.606-1.606a.75.75 0 0 0 0-1.075z' transform='translate(9.095 5.147)' style='fill:%232fe5f2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    &cake{
+        width:rem(36);
+        height:rem(36);
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cpath data-name='Path 506' d='M0 0h36v36H0z' style='fill:none'/%3E%3Cpath data-name='Intersection 12' d='M-1256.981-4877.014a1.5 1.5 0 0 1-1.5-1.5v-13.494a4.491 4.491 0 0 1 4.494-4.5h7.488v-2.995h3v2.995h7.488a4.49 4.49 0 0 1 4.493 4.5v13.494a1.5 1.5 0 0 1-1.5 1.5zm5.092-9.01a5.157 5.157 0 0 1-3.594 1.513v4.5h20.968v-4.5a5.157 5.157 0 0 1-3.594-1.513l-1.6-1.6-1.618 1.6a5.306 5.306 0 0 1-7.324 0l-1.6-1.6zm15.351-1.59a2.857 2.857 0 0 0 2.022.854v-5.247a1.5 1.5 0 0 0-1.5-1.5h-17.972a1.5 1.5 0 0 0-1.5 1.5v5.247a2.857 2.857 0 0 0 2.007-.854l3.205-3.194 3.19 3.194a3 3 0 0 0 4.148 0l3.205-3.194z' transform='translate(1263 4910)' style='fill:%23fff'/%3E%3Cpath data-name='Intersection 11' d='M-1248.995-4888a2.856 2.856 0 0 1 .434-1.545L-1246-4894l2.56 4.453a2.856 2.856 0 0 1 .44 1.547 3 3 0 0 1-3 3 3 3 0 0 1-2.995-3z' transform='translate(1264 4894)' style='fill:%232fe5f2'/%3E%3C/svg%3E%0A");
+    }
+}
+@include tab {
+
+}
+
+@include mob {
+    
+}

@@ -1,0 +1,85 @@
+
+@use "sass:math";
+@use '../../common/' as *;
+
+.t_center{text-align: center;}
+.t_justify{text-align: justify;}
+.t_left{text-align: left;}
+.t_right{text-align: right;}
+
+.va_m{vertical-align: middle;}
+.va_m_box span{
+  display: inline-block;
+  vertical-align: middle;
+}
+.va_t{vertical-align: top;}
+.va_b{vertical-align: bottom;}
+.va_base{vertical-align: baseline;}
+
+@include tab {
+  .t_md_justify{text-align: justify;}
+  .t_md_center{text-align: center;}
+  .t_md_left{text-align: left;}
+  .t_md_right{text-align: right;}
+
+  .va_md_m{vertical-align: middle;}
+  .va_md_t{vertical-align: top;}
+  .va_md_b{vertical-align: bottom;}
+  .va_md_base{vertical-align: baseline;}
+}
+@include mob {
+  .t_sm_justify{text-align: justify;}
+  .t_sm_center{text-align: center;}
+  .t_sm_left{text-align: left;}
+  .t_sm_right{text-align: right;}
+
+  .va_sm_m{vertical-align: middle;}
+  .va_sm_t{vertical-align: top;}
+  .va_sm_b{vertical-align: bottom;}
+  .va_sm_base{vertical-align: baseline;}
+}
+
+
+/*text*/
+.wb_ka{word-break: keep-all;}
+.wb_ba{word-break: break-all;}
+.wh_nw{white-space: nowrap;}
+
+
+
+.ls-75{letter-spacing: -0.075em;}
+.ls-55{letter-spacing: -0.055em;}
+.ls-50{letter-spacing: -0.05em;}
+.ls-35{letter-spacing: -0.035em;}
+
+.ls_75 * {letter-spacing: -0.090em;}
+.ls_75 * {letter-spacing: -0.075em;}
+.ls_55 * {letter-spacing: -0.055em;}
+.ls_50 * {letter-spacing: -0.05em;}
+.ls_35 * {letter-spacing: -0.035em;}
+.ls_0 * {letter-spacing: 0;}
+
+@for $i from 10 to 21 {
+    .lh_#{$i} {
+        line-height: math.div($i, 10);
+    }
+}
+
+/*display*/
+.text_hide {
+  position: absolute;
+  z-index: -1;
+  line-height: 1 !important;
+  font-size: 1px !important;
+  width: 1px !important;
+  height: 1px !important;
+  color: transparent !important;
+  background: transparent !important;
+  overflow: hidden !important;
+  font-size: 1px;
+  text-indent: -99999px;
+  opacity: 0.05 !important;
+  &:before, &:after {
+    display: none !important;
+  }
+}

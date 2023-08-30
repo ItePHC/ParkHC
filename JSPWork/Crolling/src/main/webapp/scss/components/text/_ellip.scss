@@ -1,0 +1,44 @@
+
+/* necessary plugin styles */
+[class^=ellip_]:not(.ellip_1), [class*=ellip_]:not(.ellip_1){
+    display: block;
+    display:-webkit-box;
+    word-wrap:break-word;
+    -webkit-box-orient:vertical;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+
+.ellip_1{
+    display: block;
+    max-height: 1.5em;
+    line-height: 1.5;
+    overflow: hidden;
+    max-width:100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ellip_2{
+-webkit-line-clamp:2;
+max-height: 3em;
+line-height: 1.5;
+}
+
+.ellip_3{
+-webkit-line-clamp:3;
+max-height: 4.5em;
+line-height: 1.5;
+}
+
+.ellip_4{
+    -webkit-line-clamp:4;
+    max-height: 6em;
+    line-height: 1.5;
+}
+
+.ellip_5{
+-webkit-line-clamp:5;
+    max-height: 7.5em;
+    line-height: 1.5;
+}

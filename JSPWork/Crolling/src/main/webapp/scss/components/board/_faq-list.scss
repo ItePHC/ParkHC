@@ -1,0 +1,116 @@
+/*
+*****************************************
+*          board  : start
+*
+*          type   : A
+*****************************************
+*/
+
+@use "sass:math";
+@use '../../common/variables' as var;
+@use '../../common/' as *;
+@use '../../common/color' as color;
+@use '../flex/mixin' as flex;
+@use '../icon/mixin' as icon;
+
+
+$_fs    : 16;
+$_fs-mo : 13;
+$_boards : (
+	borderT : 2px solid #222,
+	border : 1px solid #ddd,
+
+	trH : #fafafa,
+
+
+	thC : color.$color-text-b,
+	thFw : 500,
+
+
+	tdC : color.$color-text-b,
+	tdFw : 400,
+
+);
+
+.faq{
+	&_item {
+		border-bottom: 1px solid color.$color-border;
+	}
+	&_lists {
+		border-top: 2px solid #222;
+		.question,
+		.answer {
+			padding: {
+				top: em(32);
+				bottom: em(32);
+				left: em(40);
+				right: em(40);
+			}
+		}
+		.quest {
+			display: -webkit-inline-box;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+			@include flex.align-items('center');
+			@include flex.justify-content('center');
+			font-size: em(18);
+			// width: em(40, 18);
+			// min-width: em(40, 18);
+			// height: em(40, 18);
+			// background-color: map-get(color.$colors, 6);
+			margin-right: em(45, 18);
+			border-radius: 50%;
+			color: map-get(color.$colors, 1);
+			font-style: normal;
+			font-weight: bold;
+			@include tab {
+				margin-right: em(16);
+			}
+			@include mob {
+				font-size: em(18);
+			}
+
+		}
+		.question {
+			@include flex.flex-box;
+			@include flex.align-items('center');
+			position: relative;
+			transition: background .25s;
+			// &:hover {
+			// 	background-color: #fafafa;
+			// }
+			.txt {
+				font-size: em(20);
+			}
+			@include tab {
+				padding: {
+					left: 0;
+					right: em(35);
+				}
+			}
+			@include mob {
+				.txt { font-size: em(16); line-height: 1.75;}
+			}
+		}
+		.answer {
+			background-color: #f8f8f8;
+			border-top: 1px solid color.$color-border;
+			.txt {
+				font-size: em(18);
+				line-height: 1.666;
+				@include mob {
+					font-size: em(16);
+				}
+			}
+			padding: {
+				top: em(40);
+				bottom: em(40);
+				left: em(40);
+				right: em(40);
+			}
+			@include tab {
+				padding: em(16);
+			}
+		}
+	}
+}

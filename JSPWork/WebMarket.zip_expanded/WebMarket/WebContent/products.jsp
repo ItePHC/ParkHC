@@ -24,7 +24,7 @@
 				for(int i=0;i<listOfProducts.size();i++){
 					Product product=listOfProducts.get(i);
 			%>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<h3><%=product.getPname() %></h3>
 				<p><%=product.getDescription() %>
 				<p><%=product.getUnitPrice() %>원
