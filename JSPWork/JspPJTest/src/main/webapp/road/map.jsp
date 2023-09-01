@@ -16,22 +16,37 @@
 <button onclick="setZoomable(true)">지도 확대/축소 켜기</button>
 </p>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d13e207a16c4984b5b152de6e29daebb"></script>
-<script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-         // draggable: false, // 지도를 생성할때 지도 이동 및 확대/축소를 막으려면 draggable: false 옵션을 추가하세요
-        level: 3 // 지도의 확대 레벨
-    };
-
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-        
-// 버튼 클릭에 따라 지도 확대, 축소 기능을 막거나 풀고 싶은 경우에는 map.setZoomable 함수를 사용합니다
-function setZoomable(zoomable) {
-    // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
-    map.setZoomable(zoomable);    
-}
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=75b7b99c0e29c84eac2f8969566e5830">
 </script>
+<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(37.56517, 126.97771), // 지도의 중심좌표
+		        level: 6, // 지도의 확대 레벨
+		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
+
+		// 지도를 생성한다 
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+		// 마우스 드래그와 모바일 터치를 이용한 지도 이동을 막는다
+		map.setDraggable(false);		
+
+		// 마우스 휠과 모바일 터치를 이용한 지도 확대, 축소를 막는다
+		map.setZoomable(false);   
+
+		// 지도 타입 변경 컨트롤을 생성한다
+		var mapTypeControl = new kakao.maps.MapTypeControl();
+
+		// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+		map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);	
+
+		// 지도에 확대 축소 컨트롤을 생성한다
+		var zoomControl = new kakao.maps.ZoomControl();
+
+		// 지도의 우측에 확대 축소 컨트롤을 추가한다
+		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+	</script>
 </body>
 </html>
