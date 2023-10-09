@@ -46,6 +46,8 @@ public class ResultController {
 		return mview2;
 	}
 	
+	
+	
 	@GetMapping("/shop/detail")
 	public String resImage() {
 		
