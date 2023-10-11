@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <mapper namespace="mycar"> 로 작성해도 됨 -->
+<mapper namespace="spring.mysql.mycar.MyCarDao">
+	<!-- resultType 반환타입 : 경로를 써야하나 mybatis에서 alias를 선언시 선언한 alias를 사용해도 됨 -->
+	<!-- 전체리스트 -->
+	<select id="getAllListOfMyCar" resultType="mdto">		
+		select * from mycar order by num desc			<!-- ; 붙이면 안됨 -->	
+	</select>
+	
+	<!-- 전체개수얻기 -->
+	<select id="getTotalCountOfMyCar" resultType="int">
+		select count(*) from mycar 
+	</select>
+	
+	<!-- insert -->
+	<insert id="insertOfMycar" parameterType="mdto">
+		insert into mycar (carname, carprice, carcolor, carguip) values (#{carname}, #{carprice}, #{carcolor}, #{carguip})
+	</insert>
+	
+	
+	<!-- delete -->
+	<delete id="deleteOfMyCar" parameterType="String">
+		delete from mycar where num=#{num}
+	</delete>
+	
+	<!-- 
+	parameterType ) num=#{num} 
+	resultType ) select문 같은 개념
+	 -->
+	<!-- select -->
+	<select id="selectOfMyCar" parameterType="String" resultType="mdto">
+		select * from mycar where num=#{num}
+	</select>
+	
+	<!-- update -->
+	<update id="updateOfMyCar" parameterType="mdto">
+		update mycar set carname=#{carname}, carprice=#{carprice}, carcolor=#{carcolor}, carguip=#{carguip} where num=#{num}
+	</update>
+</mapper>
