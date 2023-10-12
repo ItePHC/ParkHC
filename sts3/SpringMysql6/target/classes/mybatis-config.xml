@@ -5,5 +5,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="mdto" type="spring.mysql.mycar.MyCarDto"/>	<!-- resulttype에 mdto를 사용할수 있게 됨-->
+		<typeAlias alias="cardto" type="spring.mysql.carmember.CarMemberDto"/>
 	</typeAliases>
 </configuration>

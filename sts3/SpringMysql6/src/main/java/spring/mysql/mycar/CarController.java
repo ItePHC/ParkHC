@@ -55,23 +55,12 @@ public class CarController {
 	}
 	
 	@GetMapping("/kakao/updateform")
-	public String updateform(@RequestParam("num") String num , Model model) {
+	public String updateform(@RequestParam String num , Model model) {
 	  	MyCarDto dto = dao.selectCar(num); 
 	  	model.addAttribute("dto", dto);
 	  	
 	  	return "car/updateform"; 
-	  	}	
-	
-	
-	
-	/*
-	  	@GetMapping("/kakao/updateform")
-	 	public String updateform(@RequestParam("num") String num , Model model) {
-	  	MyCarDto dto = dao.selectCar(num); 
-	  	model.addAttribute("dto", dto);
-	  	return "car/updateform"; }	
-	 */
-	
+	  	}		
 	@PostMapping("/kakao/update")
 	public String update(@ModelAttribute MyCarDto dto) {
 

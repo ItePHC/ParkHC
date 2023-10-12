@@ -35,7 +35,6 @@ public class MyCarDao {
 	}
 	
 	public MyCarDto selectCar(String num) {
-		System.out.println(num);
 		return session.selectOne("selectOfMyCar", num);
 	}
 	

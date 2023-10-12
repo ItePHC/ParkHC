@@ -18,7 +18,6 @@
 <body>
 	<div style="margin: 100px; 50px;">
 		<form action="update" method="post">
-		<h2>${dto.num} </h2>
 			<table class="table table-bordered" style="width: 350px;">
 				
 				<input type="hidden" name="num" value="${dto.num }" class="form-control">

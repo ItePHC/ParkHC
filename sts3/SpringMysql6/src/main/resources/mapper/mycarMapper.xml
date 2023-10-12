@@ -28,7 +28,7 @@
 	
 	<!-- 
 	parameterType ) num=#{num} 
-	resultType ) select문 같은 개념
+	resultType ) select문 같은 개념 : return 역할
 	 -->
 	<!-- select -->
 	<select id="selectOfMyCar" parameterType="String" resultType="mdto">

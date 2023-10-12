@@ -12,8 +12,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%-- <c:redirect url="kakao/list"/> --%>
-	<button type="button" class="btn btn-info" style="width: 300px" onclick="location.href='kakao/list'" >자동차 정보목록</button>
-	<button type="button" class="btn btn-info" style="width: 300px" onclick="location.href='member/list'" >자동차 구입고객 명단</button>
+<h3>2번예제</h3>
+<br>
+<button type="button" id="btn" class="btn btn-info">list2 json데이터 출력</button>
+<div id="out"></div>
+<script type="text/javascript">
+	$("#btn").click(function() {
+		$.ajax({
+			type:"get",
+			dataType : "json",
+			url : "list2",
+			success:function(res){
+				$("#out").empty();
+				$("#out").append("이름 : " + res.sang + "<br>");
+				$("#out").append("가격 : " + res.price + "<br>");
+				$("#out").append("색상 : " + res.color + "<br>");
+			}
+		});
+	});
+</script>
 </body>
 </html>
