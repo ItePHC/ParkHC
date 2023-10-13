@@ -63,4 +63,6 @@ public class CarMemberController {
 		inter.updateMember(dto);
 		return "redirect:list";
 	}
+	
+	@GetMapping("")
 }

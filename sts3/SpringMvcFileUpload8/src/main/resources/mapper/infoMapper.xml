@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="info">
+	<select id="selectTotalCountOfMyInfo" resultType="int">
+		select count(*) from myinfo
+	</select>
+	
+	<insert id="insertOfMyInfo" parameterType="indto">
+		insert into myinfo (name, driver, addr, photo, gaipday) values (#{name}, #{driver}, #{addr}, #{photo}, now())
+	</insert>
+	
+	<select id="selectAllOfMyInfo" resultType="indto">
+		select * from myinfo order by num desc
+	</select>
+	
+	<select id="selectOfMyInfo" resultType="indto" parameterType="String">
+		select * from myinfo where num = #{num }
+	</select>
+	
+	
+	<update id="updateOfMyInfo">
+		update myinfo set name = #{name}, driver = #{driver}, addr = #{addr}
+		<if test="photo!=null">
+		,photo=	#{photo}
+		</if>
+		 where num=#{num}
+	</update>
+	
+	<delete id="deleteOfMyInfo" parameterType="String">
+		delete from myinfo where num = #{num}
+	</delete>
+	
+</mapper>

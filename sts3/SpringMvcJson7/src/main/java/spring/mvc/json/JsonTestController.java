@@ -1,6 +1,8 @@
 package spring.mvc.json;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -20,5 +22,19 @@ public class JsonTestController {
 		map.put("addr", "경기도 수원시");
 		
 		return map;
+	}
+	
+	@GetMapping("/list3")
+	public @ResponseBody List<PhotoDto> list3(){
+		
+		List<PhotoDto> list = new ArrayList<PhotoDto>();
+		
+		list.add(new PhotoDto("1", "toy01.png"));
+		list.add(new PhotoDto("2", "toy02.png"));
+		list.add(new PhotoDto("3", "toy03.png"));
+		list.add(new PhotoDto("Pig", "toy04.png"));
+		list.add(new PhotoDto("5", "toy05.png"));
+		
+		return list;
 	}
 }
