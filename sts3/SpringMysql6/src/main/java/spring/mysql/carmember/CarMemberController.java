@@ -64,5 +64,4 @@ public class CarMemberController {
 		return "redirect:list";
 	}
 	
-	@GetMapping("")
 }

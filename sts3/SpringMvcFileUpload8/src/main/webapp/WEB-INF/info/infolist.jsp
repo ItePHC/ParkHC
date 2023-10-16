@@ -16,15 +16,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:if test="${count==0 }">
+	<c:if test="${totalCount==0 }">
 		<h3 class="alert alert-info"><b style="color: red">등록된 데이터가 없습니다</b><div align="right"><button type="button" onclick="location.href='addform'" class="btn btn-success" >글쓰기</button></div></h3>
 	</c:if>
-	<c:if test="${count!=0 }">
-		<h3 class="alert alert-info">${count }개의 데이터가 있습니다<div align="right"><button type="button" onclick="location.href='addform'" class="btn btn-success" >글쓰기</button></div></h3>
+	<c:if test="${totalCount!=0 }">
+		<h3 class="alert alert-info">${totalCount }개의 데이터가 있습니다<div align="right"><button type="button" onclick="location.href='addform'" class="btn btn-success" >글쓰기</button></div></h3>
 	</c:if>
 	
 	<hr>
-	<table class="table table-bordered" style="width: 800px;">
+	<table class="table table-bordered" style="width: 1200px;">
 		<tr>
 			<th>번호</th>
 			<th>이름</th>
@@ -59,5 +59,17 @@
 			</tr>
 		</c:forEach>
 	</table>
+	
+	<div style="width: 1200px; text-align: center;">
+		<form action="list" class="d-inline-flex">
+			<select name="title" class="form-control" style="width: 120px">
+				<option value="name" ${title == 'name'?"selected":""}>이름</option>
+				<option value="addr" ${title == 'addr'?"selected":""}>주소</option>
+				<option value="driver" ${title == 'driver'?"selected":""}>운전면허</option>
+			</select>
+			<input type="text" name="search" class="form-control" placeholder="검색단어를 입력해주세요" style="width: 400px;">
+			<button type="submit" class="btn btn-success">검색버튼</button>
+		</form>
+	</div>
 </body>
 </html>

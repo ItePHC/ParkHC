@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -25,14 +27,23 @@ public class InfoController {
 	InfoInter inter;
 	
 	@GetMapping("/info/list")
-	public ModelAndView list() {
+	public ModelAndView list(@RequestParam(defaultValue = "name") String title, @RequestParam(required = false) String search) {
 		ModelAndView model = new ModelAndView();
 		
-		int count = inter.getTotalCount();
-		List<InfoDto> list = inter.getAllInfos();
+		int totalCount = inter.getTotalCount();
 		
-		model.addObject("count", count);
-		model.addObject("list", list);
+		System.out.println(title + ", " + search);;
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("search", search);
+		map.put("title", title);
+		
+		model.addObject("totalCount", totalCount);
+		
+		List<InfoDto> list = inter.getAllInfos(map);
+		// model.addObject("list", list);
+		// model.addObject("search", search);
+		// model.addObject("title", title);
+		
 		
 		model.setViewName("info/infolist");
 		
@@ -142,4 +153,6 @@ public class InfoController {
 		
 		return "redirect:list";
 	}
+	
+	
 }

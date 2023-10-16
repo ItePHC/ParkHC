@@ -11,9 +11,9 @@
 		insert into myinfo (name, driver, addr, photo, gaipday) values (#{name}, #{driver}, #{addr}, #{photo}, now())
 	</insert>
 	
-	<select id="selectAllOfMyInfo" resultType="indto">
+<!-- 	<select id="selectAllOfMyInfo" resultType="indto">
 		select * from myinfo order by num desc
-	</select>
+	</select> -->
 	
 	<select id="selectOfMyInfo" resultType="indto" parameterType="String">
 		select * from myinfo where num = #{num }
@@ -32,4 +32,12 @@
 		delete from myinfo where num = #{num}
 	</delete>
 	
+	<!-- 검색리스트... 2개 이상을 넘길떈 parameterType에서 Map 사용 -->
+	<select id="selectAllOfMyInfo" resultType="indto" parameterType="Map">
+		select * from myinfo
+		<if test="search!=null">
+			where ${title} like concat ('%', #{search},'%')  <!-- 검색내용을 포함하여 검색 -->			
+		</if>
+		order by num asc
+	</select>
 </mapper>

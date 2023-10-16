@@ -18,7 +18,8 @@
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/photo/**" location="/resources/image/" />
-
+	<resources mapping="/upload/**" location="/WEB-INF/photo/" />
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean
@@ -35,10 +36,11 @@
 	</beans:bean>
 
 	<context:component-scan
-		base-package="spring.mvc.**" />
+		base-package="spring.mvc.*, board.data.controller" />
 
 
 
 
 
 </beans:beans>
+
