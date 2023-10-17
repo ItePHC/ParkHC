@@ -2,42 +2,36 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="info">
+  <mapper namespace="info">
 	<select id="selectTotalCountOfMyInfo" resultType="int">
 		select count(*) from myinfo
 	</select>
-	
 	<insert id="insertOfMyInfo" parameterType="indto">
-		insert into myinfo (name, driver, addr, photo, gaipday) values (#{name}, #{driver}, #{addr}, #{photo}, now())
+		insert into myinfo (name,driver,addr,photo,gaipday) values(#{name},#{driver},#{addr},#{photo},now())
 	</insert>
-	
-<!-- 	<select id="selectAllOfMyInfo" resultType="indto">
-		select * from myinfo order by num desc
+	<!-- <select id="selectAllOfMyInfo" resultType="indto">
+		select * from myinfo order by num
 	</select> -->
-	
-	<select id="selectOfMyInfo" resultType="indto" parameterType="String">
-		select * from myinfo where num = #{num }
+	<select id="selectOneOfMyInfo" resultType="indto" parameterType="String">
+		select * from myinfo where num=#{num}
 	</select>
-	
-	
-	<update id="updateOfMyInfo">
-		update myinfo set name = #{name}, driver = #{driver}, addr = #{addr}
-		<if test="photo!=null">
-		,photo=	#{photo}
+	<update id="updateOfMyInfo" parameterType="indto">
+		update myinfo set name=#{name},driver=#{driver},addr=#{addr}
+		<if test="photo!='no'">
+		,photo=#{photo}
 		</if>
-		 where num=#{num}
+		where num=#{num}
+   <!-- <if test="photo!=null></if> -->
 	</update>
-	
 	<delete id="deleteOfMyInfo" parameterType="String">
-		delete from myinfo where num = #{num}
+	 	delete from myinfo where num=#{num}
 	</delete>
-	
-	<!-- 검색리스트... 2개 이상을 넘길떈 parameterType에서 Map 사용 -->
-	<select id="selectAllOfMyInfo" resultType="indto" parameterType="Map">
+	<!-- 검색 리스트 -->
+	<select id="selectAllOfMyInfo" resultType="indto" parameterType="Map"> <!-- 2개이상일때는 map-->
 		select * from myinfo
-		<if test="search!=null">
-			where ${title} like concat ('%', #{search},'%')  <!-- 검색내용을 포함하여 검색 -->			
+		<if test="search!=null"> <!-- 검색어를 입력했을때만 검색 -->
+		  where ${title} like concat('%',#{search},'%')<!-- 검색어(컬럼) --> <!-- like(*,?,*)       where {검색기준이 될 필드명} like concat('%',?,'%') -->
 		</if>
-		order by num asc
+		  order by num asc
 	</select>
-</mapper>
+  </mapper>

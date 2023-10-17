@@ -2,30 +2,47 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="board">
-	<select id="getTotalCountOfReboard" resultType="int">
-		select count(*) from reboard
+  <mapper namespace="board">
+	<select id="getTotalCountOfReBoard" resultType="int">
+	 select count(*) from reboard
 	</select>
-	
-	<!-- num의 max값, null일 경우 0 -->
-	<select id="MaxNumOfReboard" resultType="int">
-		select ifnull(max(num),0) from reboard
+	<!-- num의 max값,null일 경우 0 -->
+	<select id="MaxNumOfReBoard" resultType="int">
+	  select ifnull(max(num),0) from reboard
 	</select>
-	
-	<!-- 같은 그룹중에서 step보다 큰 데이터는 모두 +1 -->
-	<update id="UpdateStepOfReboard" parameterType="HashMap">
-		update reboard set restep=restep+1 where regroup=#{regroup} and restep>#{restep}
+	<!-- 같은 그룹중에서 step보다 큰 데이타는 모두 +1 -->
+	<update id="UpdateStepOfReBoard" parameterType="HashMap">
+	  update reboard set restep=restep+1 where regroup=#{regroup} and restep>#{restep}
 	</update>
-	
-	<!-- insert: 원글, 답글 모두 해당 -->
-	<insert id="insertOfReboard" parameterType="bdto">
-		insert into reboard (writer, pass, subject, content, photo, regroup, restep, relevel, writeday) 
-		values (#{writer}, #{pass}, #{subject}, #{content}, #{photo}, #{regroup}, #{restep}, #{relevel}, now())
+	<!-- insert: 새글,답글,모두 해당 -->
+	<insert id="insertOfReBoard" parameterType="bdto">
+	  insert into reboard (writer,pass,subject,content,photo,regroup,restep,
+	  relevel,writeday) values (#{writer},#{pass},#{subject},#{content},#{photo},#{regroup},#{restep},#{relevel},now()) 
 	</insert>
-	
 	<!-- 페이징처리 전체리스트 -->
-	<select id="SelectPagingOfReboard" resultType="bdto" parameterType="HashMap">
-		select * from reboard order by regroup desc, restep asc limit #{start}, #{perpage}
+	<select id="SelectOfPagingOfReBoard" resultType="bdto" parameterType="HashMap"> <!-- startnum,perpage -->
+	  select * from reboard order by regroup desc,restep asc limit #{start},#{perpage}
 	</select>
 	
-</mapper>
+	<!-- 하나의 dto 값 얻기 -->
+	<select id="SelectOneOfReBoard" resultType="bdto" parameterType="int">
+	  select * from reboard where num=#{num}
+	</select>
+	<!-- readcount 증가 -->
+	<update id="UpdateReadCountOfReBoard" parameterType="int">
+	  update reboard set readcount=readcount+1 where num=#{num}
+	</update>
+	<select id="checkpassEqualOfReboard" parameterType="HashMap" resultType="int">
+		select count(*) from reboard where num=#{num} and pass=#{pass}
+	</select>
+	
+	<update id="UpdateOfReBoard" parameterType="bdto">
+		update reboard set writer = #{writer}, subject = #{subject}, content = #{content}
+		<if test="photo!='no'">, photo = #{photo}</if>
+		where num = #{num}
+	</update>
+
+	<delete id="DeleteReadCountOfReBoard" parameterType="int">
+		delete from reboard where num=#{num}
+	</delete>
+  </mapper>
