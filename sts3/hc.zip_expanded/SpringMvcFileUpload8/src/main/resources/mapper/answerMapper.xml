@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="answer">
+ 	<insert id="InsertOfReanswer" parameterType="adto">
+ 		insert into reanswer (num, nickname, pass, content, writeday) values (#{num}, #{nickname}, #{pass}, #{content}, now())
+ 	</insert>
+ 	<select id="SelectNumOfReanswer" parameterType="int" resultType="adto">
+ 		select * from reanswer where num = #{num} order by idx asc
+ 	</select>
+ 	<select id="PassCheckPassOfAnswer" parameterType="HashMap" resultType="int">
+ 		select count(*) from reanswer where idx=#{idx} and pass=#{pass}
+ 	</select>
+ 	<delete id="DeleteOfAnswer">
+ 		delete from reanswer where idx=#{idx}
+ 	</delete>
+ </mapper>
