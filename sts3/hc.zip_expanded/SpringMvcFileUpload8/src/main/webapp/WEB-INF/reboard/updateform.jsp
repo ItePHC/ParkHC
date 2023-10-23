@@ -36,14 +36,14 @@
            style="width: 300px;" value="${dto.subject }">
          </td>
        </tr>
-       
+      <!--  
        <tr>
          <th>사진</th>
          <td>
            <input type="file" name="uimage" class="form-control" 
            style="width: 220px;" multiple="multiple">
          </td>
-       </tr>
+       </tr> -->
        <tr>
          <td colspan="2">
            <textarea style="width: 480px; height: 130px;"

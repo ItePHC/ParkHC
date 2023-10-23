@@ -1,0 +1,23 @@
+#tomcat port
+server:
+  port: 9003
+#jsp
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+  devtools:
+    livereload:
+      enabled: true
+#mysql setting
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/coffee?serverTimezone=Asia/Seoul
+    username: phc
+    password: 1234
+#mybatis
+mybatis:
+  type-aliases-package: data.model.*
+  mapper-locations:
+  - /mapper/**/*.xml

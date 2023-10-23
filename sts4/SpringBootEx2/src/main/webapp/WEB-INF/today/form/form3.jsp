@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>폼 데이터 각각 읽기</h1>
+	<h1>폼 데이터 Map방식 읽기</h1>
 	<form action="read3" method="post">
 		<table class="table table-bordered" style="width: 300px;">
 			<tr>

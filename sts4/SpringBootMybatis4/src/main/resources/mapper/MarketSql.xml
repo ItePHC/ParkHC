@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="data.model.mapper.MarketMapperInter">
+ 	<select id="getTotalCount" resultType="int">
+ 		select count(*) from market
+ 	</select>
+ 	<select id="getAllSangpums" resultType="mdto">
+ 		select * from market order by sang
+ 	</select>
+ 	<insert id="insertMarket" parameterType="mdto">
+ 		insert into market (sang, price, photoname, ipgoday) values(#{sang}, #{price}, #{photoname}, now()) 
+ 	</insert>
+ </mapper>

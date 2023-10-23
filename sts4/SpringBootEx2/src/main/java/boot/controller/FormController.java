@@ -56,7 +56,7 @@ public class FormController {
 	public ModelAndView read3(@RequestParam HashMap<String, String> map) {
 		ModelAndView model = new ModelAndView();
 		
-		model.addObject("name", map.get("name"));		
+		model.addObject("name", map.get("name"));
 		model.addObject("blood", map.get("blood"));
 		model.addObject("age", map.get("age"));
 		
