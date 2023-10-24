@@ -12,4 +12,14 @@
  	<insert id="insertMarket" parameterType="mdto">
  		insert into market (sang, price, photoname, ipgoday) values(#{sang}, #{price}, #{photoname}, now()) 
  	</insert>
+ 	<select id="getData" resultType="mdto" parameterType="String">
+ 		select * from market where num=#{num}
+ 	</select>
+ 	<update id="updateMarket" parameterType="mdto">
+ 		update market set sang=#{sang}, price=#{price}, photoname=#{photoname} where num=#{num}
+ 	</update>
+ 	<delete id="deleteMarket" parameterType="String">
+ 		delete from market where num=#{num}
+ 	</delete>
+ 	
  </mapper>

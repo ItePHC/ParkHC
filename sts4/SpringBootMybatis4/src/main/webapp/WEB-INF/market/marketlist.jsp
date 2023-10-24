@@ -53,7 +53,6 @@
 						onclick="location.href='delete?num=${dto.num}'">삭제</button>
 				</td>
 			</tr>
-
 		</c:forEach>
 	</table>
 	<div style="margin: 50px 50px;">
