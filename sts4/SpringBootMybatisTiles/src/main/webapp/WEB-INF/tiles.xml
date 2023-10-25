@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="layout1" template="/WEB-INF/layout/layout1.jsp">
+		<put-attribute name="title" value="/WEB-INF/layout/title.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+		<put-attribute name="main" value="/WEB-INF/layout/main.jsp"/>
+		<put-attribute name="info" value="/WEB-INF/layout/info.jsp"/>
+	</definition>
+	
+	<!-- 레이아웃 2를 추가하고 싶을 때 예시	.... 레이아웃 아래로 양식을 추가하면서 늘려가면 됨
+	<definition name="layout2" template="/WEB-INF/layout/layout2.jsp">
+		<put-attribute name="title" value="/WEB-INF/layout/title.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+		<put-attribute name="main" value="/WEB-INF/layout/main.jsp"/>
+	</definition>
+	 -->														
+	 																<!-- 컨트롤러에서 home.tiles를 사용시 이걸 사용하는것을 의미 -->
+	 																<!-- home.tiles가 layout1을 의미하게 됨 -->
+	 																<!-- main에 다 띄우기 위함 -->
+	 <!-- 
+	 <definition name="home.tiles" extends="layout1">
+	 	<put-attribute name="main" value="/WEB-INF/layout/main.jsp"/>	
+	 </definition>
+	 
+	 <definition name="list.tiles" extends="layout1">
+	 	<put-attribute name="main" value="/WEB-INF/board/list.jsp"/>	
+	 </definition>
+	 
+	 <definition name="input.tiles" extends="layout1">
+	 	<put-attribute name="main" value="/WEB-INF/board/addform.jsp"/>	
+	 </definition>
+	  -->
+	 
+	 <!-- Wild card...레이아웃을 늘려나갈시 추가하는 만큼 추가로 만들어줄 것 -->
+	  <definition name="/*/*" extends="layout1">
+	 	<put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp"/>	<!-- 매크로 지정 후 {1},{2}만 작성해줌 -->	
+	 </definition>
+</tiles-definitions>
