@@ -12,7 +12,8 @@
 <title>Insert title here</title>
 <style type="text/css">
 img{
-	object-fit: cover;
+	width: 80%;
+	height: 100%;
 }
 </style>
 </head>
@@ -20,7 +21,7 @@ img{
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <a href="${root }">
-	<img src="${root }/image/banner1.jpg" style="width: 100%">
+	<img src="${root }/image/banner1.jpg">
 </a>
 </body>
 </html>

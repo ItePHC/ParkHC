@@ -13,9 +13,9 @@
 </head>
 <c:set var="root" value="<%=request.getContextPath() %>" />
 <body>
+<h2><b style="size: 2vh; height: 4vh;">MainPage입니다</b></h2>
 <img alt="" src="${root }/image/oneday01.jpg"><br>
 <img alt="" src="${root }/image/oneday02.jpg"><br>
 <img alt="" src="${root }/image/oneday03.jpg"><br>
-<h2>MainPage입니다</h2>
 </body>
 </html>

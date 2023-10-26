@@ -36,13 +36,13 @@ public class IpgoController {
 	  @GetMapping("/ipgo/list") 
 	  public ModelAndView list() { ModelAndView model = new ModelAndView();
 	  
-	  List<IpgoDto> list = mapper.getAllIpgos(); int totalCount =
-	  mapper.getTotalCount();
+	  List<IpgoDto> list = mapper.getAllIpgos(); 
+	  int totalCount = mapper.getTotalCount();
 	  
 	  model.addObject("totalCount", totalCount); 
-//	  model.addObject("list", list);
+	  model.addObject("list", list);
 	  
-	  model.setViewName("/ipgo/ipgolist"); 
+	  model.setViewName("/Ipgo/ipgolist"); 
 	  return model; 
 	  }
 	 
@@ -51,7 +51,7 @@ public class IpgoController {
 	 @GetMapping("/ipgo/ipgoform") 
 	 public String form() {
 		 
-		 return "/ipgo/ipgoform"; 
+		 return "/Ipgo/ipgoform"; 
 		 }
 	 
 	
@@ -88,6 +88,6 @@ public class IpgoController {
 		}
 		dto.setPhotoname(uploadFileName);
 		mapper.insertIpgo(dto);
-		return "/ipgo/ipgolist";
+		return "/Ipgo/ipgolist";
 	}
 }

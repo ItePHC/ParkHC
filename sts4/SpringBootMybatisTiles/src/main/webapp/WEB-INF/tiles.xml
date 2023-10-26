@@ -10,8 +10,13 @@
 		<put-attribute name="main" value="/WEB-INF/layout/main.jsp"/>
 		<put-attribute name="info" value="/WEB-INF/layout/info.jsp"/>
 	</definition>
+	<definition name="layout2" template="/WEB-INF/layout/layout2.jsp">		<!-- put-attribute의 이름이 겹치면 안됨 -->
+		<put-attribute name="title2" value="/WEB-INF/layout/title2.jsp"/>
+		<put-attribute name="menu2" value="/WEB-INF/layout/menu2.jsp"/>
+		<put-attribute name="main" value="/WEB-INF/layout/main.jsp"/>
+	</definition>
 	
-	<!-- 레이아웃 2를 추가하고 싶을 때 예시	.... 레이아웃 아래로 양식을 추가하면서 늘려가면 됨
+	<!-- 레이아웃을 추가하고 싶을 때 예시	.... 레이아웃 아래로 양식을 추가하면서 늘려가면 됨
 	<definition name="layout2" template="/WEB-INF/layout/layout2.jsp">
 		<put-attribute name="title" value="/WEB-INF/layout/title.jsp"/>
 		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
@@ -35,8 +40,14 @@
 	 </definition>
 	  -->
 	 
-	 <!-- Wild card...레이아웃을 늘려나갈시 추가하는 만큼 추가로 만들어줄 것 -->
+	 <!-- Wild card...레이아웃을 늘려나갈시 추가하는 만큼 추가로 만들어줄 것 / *** extends맞추기  -->
 	  <definition name="/*/*" extends="layout1">
 	 	<put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp"/>	<!-- 매크로 지정 후 {1},{2}만 작성해줌 -->	
 	 </definition>
+	 
+	  <definition name="/2/*/*" extends="layout2">				<!-- definition에서 1과 다른 name을 사용해야 함 -->
+	 	<put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp"/>	
+	 </definition>
+	 
+	 
 </tiles-definitions>

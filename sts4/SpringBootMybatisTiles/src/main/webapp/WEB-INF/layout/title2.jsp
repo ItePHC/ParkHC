@@ -12,19 +12,16 @@
 <title>Insert title here</title>
 <style type="text/css">
 img{
-width: 100%;
-object-fit: cover;
+	width: 100%; 
+	height: 60px;
 }
 </style>
 </head>
+
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-   <img alt="" src="${root }/image/oneday01.jpg">
-   각종 정보 나타나게 해올 것!
-   <div class="loginmenu">
-		<a href="${root }/login/main">로그인</a>
-		<a href="${root }/member/list">회원목록</a>
-		<a href="${root }/member/form">회원가입</a>
-	</div>
+<a href="${root }">
+	<img src="${root }/image/logo2.png">
+</a>
 </body>
 </html>

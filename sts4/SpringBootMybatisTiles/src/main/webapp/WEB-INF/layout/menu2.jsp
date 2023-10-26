@@ -15,49 +15,49 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
-div.barlist{
-	position: absolute;
-	width: 100%;
-	height:8vh;
-	background-color: black ;
-}
-
 .navbar {
-	position: absolute;
 	text-align: center;
+	position: relative;
 	list-style: none;
-	display: flex;
-	align-content:center;
+	display: table;
 	width:80%;
-	height:8vh;
 	margin-left: 10%;
 }
 
 .navbar > a {	
+	
 	position: relative;
+	width: 16%;
 	float: left;
-	width: 10vh;
+	margin-right : 3%;
 	text-align: center;
-	font-size: 3vh;
+	font-size: 2vh;
 	font-family: Nanum Pen Script;
 	cursor: pointer;
-	text-decoration: 0.01vh solid underline;
-	color: white;
+	margin: 2%;
+	text-decoration: none;
+	color: black;
+	float: left;
 }
+
+
 </style>
 </head>
 <c:set var="root" value="<%=request.getContextPath() %>" />
 <body>
-	<div class="barlist">
-		<nav class="navbar navbar-dark">
-	  		<a href="${root }/">Home</a>
+	
+		
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  
+		<div>
+			<a href="${root }/">Home</a>
 			<a href="${root }/ipgo/ipgoform">상품등록</a>
 			<a href="${root }/ipgo/list">상품목록</a>
 			<a href="${root }/board/list">게시판</a>	
 			<a href="${root }/load/map">오시는길</a>
-		</nav>
-	</div>
+		</div>
 	
+	</nav>
 	
 </body>
 </html>
