@@ -61,12 +61,12 @@
 	<h2>
 		<b style="size: 2vh; height: 4vh;">MainPage입니다</b>
 		<c:if test="${sessionScope.loginok==null }">
-			<button type="button" class="btn btn-success"
+			<br><button type="button" class="btn btn-outline-success"
 				onclick="location.href='${root}/login/main'">Login</button>
 		</c:if>
 		<c:if test="${sessionScope.loginok!=null }">
-			<b>${sessionScope.myid}님이 로그인 중...</b>
-			<button type="button" class="btn btn-success"
+			<br><b>${sessionScope.myid}님이 로그인 중...</b>
+			<button type="button" class="btn btn-outline-danger"
 				onclick="location.href='${root}/login/logoutprocess'">
 				LogOut</button>
 		</c:if>

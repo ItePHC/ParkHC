@@ -8,9 +8,11 @@
   	<select id="getAllMembers" resultType="memberDto">
   		select * from bootmember order by num
   	</select>
-  	<select id="getData" parameterType="String" resultType="memberDto">
+<!--   	
+	<select id="getData" parameterType="String" resultType="memberDto">
   		select * from bootmember where num=#{num}
   	</select>
+-->
   	<select id="getCheckIdByNum" parameterType="String" resultType="int">
   		select count(*) from bootmember where id=#{id}
   	</select>
@@ -32,4 +34,7 @@
   	<update id="updateMember" parameterType="memberDto">
   		update bootmember set name=#{name}, addr=#{addr}, email=#{email} where num=#{num}
   	</update>
+  	<select id="getDataByNum" parameterType="String" resultType="memberDto">
+  		select * from bootmember where num=#{num}
+  	</select>
   </mapper>

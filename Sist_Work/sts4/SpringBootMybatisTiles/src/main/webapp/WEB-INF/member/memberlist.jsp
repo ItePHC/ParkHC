@@ -55,6 +55,7 @@ $(function() {
 <h5 class="alert alert-info">${totalCount }명의 회원이 있습니다</h5>
 <button type="button" class="btn btn-outline-info"
 onclick="location.href='form'">회원가입</button>
+<button type="button" class="btn btn-outline-success" onclick="location.href='${root}/login/main'">Login</button>
 <br>
 <table class="table table-bordered">
 	<caption align="top"><b>전체 회원 명단</b></caption>

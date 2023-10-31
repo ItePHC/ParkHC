@@ -36,7 +36,7 @@ public class LoginController {
 			String name = service.getName(myid);
 			model.addAttribute("name", name);
 			
-			System.out.println("myid는 "+myid);
+//			System.out.println("myid는 "+myid);
 			
 			
 			return "/login/logoutform";
@@ -61,7 +61,7 @@ public class LoginController {
 			
 			session.setAttribute("loginphoto", mdto.getPhoto());
 			
-			System.out.println("id는 "+id);
+//			System.out.println("id는 "+id);
 			
 			
 			return "redirect:main";

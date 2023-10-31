@@ -14,9 +14,11 @@ public interface MemberServiceInterface {
 	public String getName(String id);
 //	public int loginPassCheck(Map<String, String> map) ;
 	public MemberDto getDataById(String id);
-//	public MemberDto getData(String num);
+	
 	public int loginPassCheck(String id, String pass);
 	public void deleteMember(String num);
 	public void updatephoto(String num,String photo);
 	public void updateMember(MemberDto dto);
+	
+	public MemberDto getDataByNum(String num);
 }

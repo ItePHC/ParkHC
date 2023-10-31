@@ -72,11 +72,11 @@ public class MemberService implements MemberServiceInterface {
 		mapperInter.deleteMember(num);
 	}
 
-//	@Override
-//	public MemberDto getData(String num) {
-//		// TODO Auto-generated method stub
-//		return mapperInter.getData(num);
-//	}
+	@Override
+	public MemberDto getDataByNum(String num) {
+		// TODO Auto-generated method stub
+		return mapperInter.getDataByNum(num);
+	}
 	
 	@Override
 	public void updatephoto(String num, String photo) {

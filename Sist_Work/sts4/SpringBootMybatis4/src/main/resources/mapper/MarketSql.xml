@@ -20,6 +20,5 @@
  	</update>
  	<delete id="deleteMarket" parameterType="String">
  		delete from market where num=#{num}
- 	</delete>
- 	
+ 	</delete>  
  </mapper>

@@ -9,11 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,6 +25,7 @@ import boot.data.dto.MemberDto;
 import boot.data.service.MemberService;
 
 @Controller
+// @RestController
 public class MemberController {
 
 	@Autowired
@@ -100,14 +99,20 @@ public class MemberController {
 
 	@GetMapping("/member/delete")
 	@ResponseBody
-	public void deleteMember(@RequestParam String num) {
+	public void deleteMember(@RequestParam String num, HttpSession session) {
+		String path = session.getServletContext().getRealPath("/membersave");
+		String photo = service.getDataByNum(num).getPhoto();
+		File file = new File(path + "/" + photo);
+		file.delete();
+		
 		service.deleteMember(num);
-
 	}
 
 	@PostMapping("/member/updatephoto")
 	@ResponseBody
 	public void photoupload(String num, MultipartFile photo, HttpSession session) {
+		
+		
 		String path = session.getServletContext().getRealPath("/upload");
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -130,4 +135,32 @@ public class MemberController {
 		
 	}
 	
+	//나의 정보에서 삭제
+	@GetMapping("/member/delMyInfo")
+	@ResponseBody
+	public void deleteinfo(String num, HttpSession session) {
+		
+		String path = session.getServletContext().getRealPath("/membersave");
+		String photo = service.getDataByNum(num).getPhoto();
+		File file = new File(path + "\\" + photo);
+			System.out.println(file);	//?
+		file.delete();					//?
+		
+		service.deleteMember(num);
+		
+		session.removeAttribute("loginok");
+		session.removeAttribute("myid");
+		session.removeAttribute("loginphoto");
+		session.removeAttribute("saveok");
+	}
+	
+	@GetMapping("/member/updatemember")
+	@ResponseBody
+	public Map<String, String> updateinfo(MemberDto dto) {
+		Map<String, String> map = new HashMap<>();
+		
+		service.updateMember(dto);
+
+		return map;
+	}
 }
