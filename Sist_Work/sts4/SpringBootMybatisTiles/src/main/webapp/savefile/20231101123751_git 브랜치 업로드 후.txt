@@ -1,0 +1,23 @@
+(branch) : git add / commit / push 
+
+(branch) : git checkout master
+
+(master) : git merge (branch)
+
+(master) : git push origin master
+
+---------------------------------------------
+
+(branch) : git add / commit / push 
+
+(branch) : git checkout master
+
+(master) : git pull origin master
+
+(master) : git checkout (branch)
+
+(branch) : git merge master
+
+(conflict 발생시 발생위치에서 파일 수정 후 브랜치에서 다시 add commit push)
+
+(@@@|Merging) 발생중 위치를 모를 땐 : git merge --abort

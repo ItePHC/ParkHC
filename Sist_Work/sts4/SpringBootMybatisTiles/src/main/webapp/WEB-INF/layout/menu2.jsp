@@ -33,7 +33,7 @@ div.barlist{
 	margin-left: 10%;
 }
 
-.navbar > a {	
+.menulist {	
 	position: relative;
 	float: left;
 	width: 10vh;
@@ -41,7 +41,7 @@ div.barlist{
 	font-size: 3vh;
 	font-family: Nanum Pen Script;
 	cursor: pointer;
-	text-decoration: 0.01vh solid underline;
+	text-decoration: 0.03vh solid underline;
 	color: white;
 }
 </style>
@@ -50,11 +50,11 @@ div.barlist{
 <body>
 	<div class="barlist">
 		<nav class="navbar navbar-dark">
-	  		<a href="${root }/">Home</a>
-			<a href="${root }/ipgo/ipgoform">상품등록</a>
-			<a href="${root }/ipgo/list">상품목록</a>
-			<a href="${root }/board/list">게시판</a>	
-			<a href="${root }/load/map">오시는길</a>
+	  		<a class="menulist" href="${root }/">Home</a>
+			<a class="menulist" href="${root }/ipgo/ipgoform">상품등록</a>
+			<a class="menulist" href="${root }/ipgo/list">상품목록</a>
+			<a class="menulist" href="${root }/board/list">게시판</a>	
+			<a class="menulist" href="${root }/load/map">오시는길</a>
 		</nav>
 	</div>
 	

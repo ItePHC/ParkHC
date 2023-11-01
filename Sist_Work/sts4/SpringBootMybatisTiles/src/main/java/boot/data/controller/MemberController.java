@@ -108,7 +108,7 @@ public class MemberController {
 		service.deleteMember(num);
 	}
 
-	@PostMapping("/member/updatephoto")
+	@GetMapping("/member/updatephoto")
 	@ResponseBody
 	public void photoupload(String num, MultipartFile photo, HttpSession session) {
 		
@@ -156,11 +156,10 @@ public class MemberController {
 	
 	@GetMapping("/member/updatemember")
 	@ResponseBody
-	public Map<String, String> updateinfo(MemberDto dto) {
-		Map<String, String> map = new HashMap<>();
+	public String updateinfo(MemberDto dto) {
 		
 		service.updateMember(dto);
-
-		return map;
+		
+		return "/member/myinfo";
 	}
 }

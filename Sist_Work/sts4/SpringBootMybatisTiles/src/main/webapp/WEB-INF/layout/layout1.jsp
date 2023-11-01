@@ -71,8 +71,6 @@ div.layout div.main {
 			<tiles:insertAttribute name="info" />
 		</div>
 
-		
-
 		<div class="main">
 			<tiles:insertAttribute name="main" />
 		</div>

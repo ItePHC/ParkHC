@@ -15,45 +15,6 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
-	/*
-	 var color = [
-	 '#000000',
-	 '#ffffff',
-	 ]
-
-	 var container = document.getElementById('container');
-	 var color = document.getElementById('color');
-
-	 var colorIndex = 0;
-	 var scrollValue = 0;		//get mouse wheel value
-	 var dateNow = Date.now();
-	 $(function() {
-	 $(function changeBgColor(e) {
-	 scrollValue += e.deltaY * 0.01;
-	 console.log(scrollValue);
-	
-	 //위로 Scroll
-	 if (scrollValue > 10 && timePassed > 500) {
-	 dateNow = Date.now();
-	 colorIndex += 1;
-	 if (colorIndex > colors.length-1) colorIndex = 0;
-	 container.style.backgroundColor = colors[colorIndex];	//배경색 변경
-	 scrollValue = 0;	//스크롤 값 초기화
-	 }
-
-	 //아래로 Scroll
-	 if (scrollValue < -10 && timePassed > 500) {
-	 dateNow = Date.now();
-	 colorIndex -= 1;
-	 if (colorIndex < 0) colorIndex = colors.length-1;
-	 container.style.backgroundColor = colors[colorIndex];	//배경색 변경
-	 scrollValue = 0;	//스크롤 값 초기화
-	 }
-	 e.preventDefault(); // disable the actual scrolling
-	 }
-	 });
-	 });
-	 */
 </script>
 </head>
 <c:set var="root" value="<%=request.getContextPath()%>" />

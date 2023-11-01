@@ -67,28 +67,22 @@
 		});
 		
 		$("#updatebtn").click(function() {
-			
 			//ID 비번 읽기
-			var mnum = $("#mnum").val();
-			var mname = $("#mname").val();
-			var memail = $("#memail").val();
-			var maddr = $("#maddr").val();
-			
-//			alert(mnum);
-//			alert(mname+"//"+memail+"//"+maddr);
-			
-//			var root = '${root}';
-//			console.log("root" + root);
-			
+			var num = $("#num").val();
+			var name = $("#name").val();
+			var email = $("#email").val();
+			var addr = $("#addr").val();
+
 			$.ajax({
 				type:"get",
 				url:"/member/updatemember",
-				dataType:"json",
-				data:{"num":mnum, "name":mname, "email":memail, "addr":maddr},
+				dataType:"html",
+				data:{"num":num, "name":name, "email":email, "addr":addr},
+				
 				success:function(){
 						alert("수정되었습니다");
-						location.href="/member/myinfo";
-					}
+						location.reload();
+						}
 					});
 			});
 	});
@@ -147,15 +141,19 @@
 				      <div class="modal-body">
 				       
 				        	<div class="form-control">
-				        	<input type="hidden" id="mnum" value="${dto.num }">
+				        	<input type="hidden" id="num" value="${dto.num }" style="width: 30vh;">
 				        		<div>
-				        		회원명<input type="text" id="mname" value="${dto.name }"> 
-				        		</div>
-				        		<div>
-				        		이메일<input type="text" id="memail" value="${dto.email }">
-				        		</div>
-				        		<div> 
-								주소<input type="text" id="maddr" value="${dto.addr }">
+				        		<label>회원명</label>
+				        		<br>
+				        			<input type="text" id="name" value="${dto.name }" style="width: 30vh;"> 
+				        		<br>
+				        		<label>이메일</label>
+				        		<br>
+				        			<input type="text" id="email" value="${dto.email }" style="width: 30vh;">
+				        		<br> 
+								<label>주소</label>
+								<br>
+									<input type="text" id="addr" value="${dto.addr }" style="width: 30vh;">
 								</div>
 				        	</div>
 				       
@@ -164,7 +162,7 @@
 				      <!-- Modal footer -->
 				      <div class="modal-footer">
 				      <button type="button" class="btn btn-primary" id="updatebtn" data-bs-dismiss="modal">수정하기</button>
-				        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+				      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">취소</button>
 				      </div>
 				
 				    </div>
@@ -173,9 +171,5 @@
 			</c:forEach>
 		</table>
 	</div>
-	
-	
-	
-	
 </body>
 </html>
