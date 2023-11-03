@@ -129,7 +129,7 @@ public class MemBoardController {
 	}
 	
 	@GetMapping("/content")
-	public ModelAndView content(@RequestParam String num) {
+	public ModelAndView content(@RequestParam String num, @RequestParam(defaultValue = "1") int currentPage) {
 		ModelAndView model = new ModelAndView();
 		
 		//조회수 증가
@@ -137,7 +137,7 @@ public class MemBoardController {
 		
 		MemBoardDto dto = service.getData(num);	
 		model.addObject("dto", dto);
-		
+		model.addObject("currentPage", currentPage);
 		
 		//업로드 파일의 확장자 얻기
 		int dotLoc=dto.getUploadfile().lastIndexOf('.');	//마지막 점의 위치
@@ -152,6 +152,28 @@ public class MemBoardController {
 			
 		model.setViewName("/memboard/content");
 		return model;
+	}
+	
+	@GetMapping("/update")
+	public ModelAndView uform(@RequestParam String num, @RequestParam(defaultValue = "1") int currentPage, HttpSession session) {
+		ModelAndView model = new ModelAndView();
+		
+		MemBoardDto dto = service.getData(num);
+		model.addObject("dto", dto);
+		
+		if(dto.getUpload().getOriginalFilename().equals(""))
+			
+		
+		model.setViewName("/memboard/updateform");
+		return model;
+	}
+	
+	@GetMapping("/delete")
+	public String delete() {
+
+		// service.
+		
+		return "redirect:list?currentPage=${currentPage}";
 	}
 	
 }

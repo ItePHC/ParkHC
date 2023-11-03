@@ -50,6 +50,7 @@ div.barlist{
 	<div class="barlist">
 		<nav class="navbar navbar-dark">
 	  		<a class="menulist" href="${root }/">Home</a>
+			<a class="menulist" href="${root }/smart/list">스마트샵</a>	
 			<a class="menulist" href="${root }/ipgo/ipgoform">상품등록</a>
 			<a class="menulist" href="${root }/ipgo/list">상품목록</a>
 			<a class="menulist" href="${root }/memboard/list">회원게시판</a>

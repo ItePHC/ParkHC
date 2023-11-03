@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boot.data.mapper.SmartMapperInter">
+
+	<insert id="insertSshop" parameterType="sshop">
+		insert into smartshop (sangname, price, color, content, ipgoday)
+		values(#{sangname},#{price},#{color},#{content},#{ipgoday} )
+	</insert>
+	<!--전체 리스트 조회라 num을 넘길 필요가 없기 때문에 parameter type을 넣어줄 필요 없음 -->
+	<select id="getAllSangpums" resultType="sshop">
+		select * from smartshop order by num desc
+	</select>
+
+	<select id="getSdata" parameterType="int" resultType="sshop">
+		select * from smartshop where num=#{num}
+	</select>
+
+	<update id="updateSshop" parameterType="sshop">
+		update smartshop set sangname=#{sangname}, price=#{price}, color=#{color},
+		content=#{content} where num=#{num}
+	</update>
+
+	<delete id="deleteSshop" parameterType="int">
+		delete from smartshop where num=#{num}
+	</delete>
+</mapper>

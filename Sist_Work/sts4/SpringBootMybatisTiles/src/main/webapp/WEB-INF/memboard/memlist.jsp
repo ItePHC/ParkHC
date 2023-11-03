@@ -43,7 +43,7 @@
 				<c:set var="no" value="${no-1 }"/>
 				<td><a href="content?num=${dto.num }&currentPage=${currentPage}">${dto.subject }
 				<c:if test="${dto.uploadfile!='NoFile' }">
-					<i class="bi bi-file-earmark-break"></i>
+					<i class="bi bi-paperclip"></i>
 				</c:if>
 				</a></td>
 				<td>${dto.content }</td>

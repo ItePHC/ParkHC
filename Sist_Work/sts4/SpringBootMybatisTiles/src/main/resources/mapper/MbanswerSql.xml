@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="boot.data.mapper.MbanswerMapperInter">		
+  	<insert id="insertMbanswer" parameterType="mbdto">
+  		insert into mbanswer(idx, num, name, myid, content, writeday) values(#{idx}, #{num}, #{name}, #{myid}, #{content}, now())
+  	</insert>
+  	
+  	<select id="getAllAnswers" parameterType="String" resultType="mbdto">
+  		select * from mbanswer where num=#{num} 
+  	</select>
+  	
+  	<select id="getAnswer" parameterType="String" resultType="mbdto" >
+  		select * from mbanswer where idx=#{idx}
+  	</select>
+  	
+  	<update id="updateMbanswer" parameterType="mbdto">
+  		update mbanswer set content=#{content} where idx=#{idx}
+  	</update>
+  	
+  	<delete id="deleteMbanswer" parameterType="String">
+  		delete from mbanswer where idx=#{idx}
+  	</delete>
+  </mapper>
+  
