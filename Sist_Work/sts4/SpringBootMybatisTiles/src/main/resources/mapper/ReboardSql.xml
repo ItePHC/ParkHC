@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 답변형게시판 -->
+  <mapper namespace="boot.data.mapper.ReboardMapperInter">		
+	<select id="getMaxNum" resultType="int">
+		select ifnull(max(num),0) from reminiboard
+	</select>
+	<select id="getTotalCount" parameterType="Map" resultType="int">
+		select count(*) from reminiboard
+		<if test="searchcolumn!=null and searchword!=null">				<!-- 넘기는 값이 있다면 그 값의 갯수를 계산한다 -->
+			where ${searchcolumn} like concat('%',#{searchword},'%')
+		</if>
+	</select>
+	<select id="getPagingList" parameterType="Map" resultType="reboard">
+		select * from reminiboard
+		<if test="searchcolumn!=null and searchword!=null">				<!-- 넘기는 값이 있다면 그 값의 갯수를 계산한다 -->
+			where ${searchcolumn} like concat('%',#{searchword},'%')
+		</if>
+		order by regroup desc, restep asc limit #{startnum}, #{perpage}
+	</select>
+	<insert id="insertReboard" parameterType="reboard">
+		insert into reminiboard values(null, #{id}, #{name}, #{subject}, #{content}, #{photo}, 0, 0, #{regroup}, #{restep}, #{relevel}, now())
+	</insert>
+	<update id="updatRestep" parameterType="Map">
+		update reminiboard set restep=restep+1 where regroup=#{regroup} and restep>#{restep}
+	</update>
+	<update id="updateReadCount" >
+		update reminiboard set readcount=readcount+1 where num=#{num}
+	</update>
+	<select id="getData">
+		select * from reminiboard where num=#{num}
+	</select>
+	<update id="updateReboard" parameterType="reboard">
+		update reminiboard set subject=#{subject}, content=#{content}
+		<if test="photo!=null">
+			,photo=#{photo}
+		</if>
+		where num=#{num}
+	</update>
+	<delete id="deleteReboard" parameterType="int">
+		delete from reminiboard where num=#{num}
+	</delete>
+	<update id="updateLikes" parameterType="int">
+		update reminiboard set likes=likes+1 where num=#{num}
+	</update>
+  </mapper>
