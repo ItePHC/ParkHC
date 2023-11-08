@@ -1,0 +1,12 @@
+#tomcat port
+server:
+  port: 9009
+#jsp
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+  devtools:
+    livereload:
+      enabled: true
