@@ -41,7 +41,7 @@
        <c:if test="${totalCount>0 }">
          <c:forEach  var="dto" items="${list }">
            <tr>
-             <td align="center">${no } </td>
+             <td align="center">${no }</td>
              <c:set var="no" value="${no-1 }"/>  <!-- 출력후 감소 -->
              <td> <!-- 제목 -->
                 <!-- relevel 만큼 공백 -->

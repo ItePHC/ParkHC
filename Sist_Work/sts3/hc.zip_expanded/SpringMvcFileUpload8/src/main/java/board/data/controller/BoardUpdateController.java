@@ -81,8 +81,10 @@ public class BoardUpdateController {
 				
 				String photo="";
 				
-				if(uimage.get(0).getOriginalFilename().equals(""))
+				if(uimage.get(0).getOriginalFilename().equals("")) {
 					photo=null;
+					System.out.println(photo);
+	}
 				else {
 					
 					//수정전에 이전사진 지우기

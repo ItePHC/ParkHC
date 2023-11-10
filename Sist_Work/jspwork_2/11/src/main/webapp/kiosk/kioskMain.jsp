@@ -253,5 +253,3 @@ $(function (){
 		$("#myModal").modal();
 	})
 </script>
-</body>
-</html>
