@@ -21,5 +21,4 @@ public interface ReboardMapperInter {
 	public void deleteReboard(int num);
 	public void updateLikes(int num);
 	
-	 
 }

@@ -12,7 +12,6 @@ public interface MemberMapperInter {
 	public void insertMember(MemberDto dto);
 	public List<MemberDto> getAllMembers();
 	public int getCheckIdByNum(String id);		// ID중복검사
-
 	public String getName(String id);
 	public int loginPassCheck(Map<String, String> map) ;
 	public MemberDto getDataById(String id);

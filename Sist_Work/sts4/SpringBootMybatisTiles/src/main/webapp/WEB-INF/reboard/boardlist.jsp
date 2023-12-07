@@ -21,8 +21,11 @@
 	<div class="alert alert-info">
 		${totalCount }개의 게시글이 있습니다 <br>
 		<div style="float: right;">
-			<button type="button" class="btn btn-info" onclick="location.href='form'">글쓰기</button>
-			<button type="button" class="btn btn-info" onclick="location.href='list?searchcolumn=id&searchword=${sessionScope.myid}'">내가 쓴 글</button>
+			<button type="button" class="btn btn-info"
+				onclick="location.href='form'">글쓰기</button>
+			<button type="button" class="btn btn-info"
+				onclick="location.href='list?searchcolumn=id&searchword=${sessionScope.myid}'">내가
+				쓴 글</button>
 		</div>
 		<table class="table table-bordered">
 			<tr>
@@ -98,39 +101,37 @@
 			</ul>
 		</div>
 	</c:if> --%>
-	
+
 	<!-- 페이지번호 출력 -->
-     <c:if test="${totalCount>0 }">
-        <div style="width: 800px; text-align: center;">
-           <ul class="pagination justify-content-center">
-              <!-- 이전 -->
-              <c:if test="${startPage>1 }">
-                 <li class="page-item"><a href="list?currentPage=${startPage-1 }"></a></li>
-              </c:if>
-              <c:forEach var="pp" begin="${startPage }" end="${endPage }">
-                 <c:if test="${currentPage==pp }">
-                    <li class="page-item active">
-                         <a class="page-link" href="list?currentPage=${pp }">${pp }</a>
-                    </li>
-                 </c:if>
-                 <c:if test="${currentPage!=pp }">
-                    <li class="page-item">
-                         <a class="page-link" href="list?currentPage=${pp }">${pp }</a>
-                    </li>
-                 </c:if>
-              </c:forEach>
-                 
-              
-              <!-- 다음 -->
-              <c:if test="${endPage<totalPage }">
-                 <li class="page-item ">
-                      <a class="page-link" href="list.jsp?currentPage=${ endPage+1}>">다음</a>
-                  </li>
-              </c:if>
-           </ul>
-        </div>
-     </c:if>
-	
+	<c:if test="${totalCount>0 }">
+		<div style="width: 800px; text-align: center;">
+			<ul class="pagination justify-content-center">
+				<!-- 이전 -->
+				<c:if test="${startPage>1 }">
+					<li class="page-item"><a
+						href="list?currentPage=${startPage-1 }"></a></li>
+				</c:if>
+				<c:forEach var="pp" begin="${startPage }" end="${endPage }">
+					<c:if test="${currentPage==pp }">
+						<li class="page-item active"><a class="page-link"
+							href="list?currentPage=${pp }">${pp }</a></li>
+					</c:if>
+					<c:if test="${currentPage!=pp }">
+						<li class="page-item"><a class="page-link"
+							href="list?currentPage=${pp }">${pp }</a></li>
+					</c:if>
+				</c:forEach>
+
+
+				<!-- 다음 -->
+				<c:if test="${endPage<totalPage }">
+					<li class="page-item "><a class="page-link"
+						href="list.jsp?currentPage=${ endPage+1}>">다음</a></li>
+				</c:if>
+			</ul>
+		</div>
+	</c:if>
+
 	<!-- 검색창  -->
 	<div class="searcharea" style="width: 100%; text-align: center;">
 		<form action="list">
@@ -141,8 +142,8 @@
 					<option value="id">아이디</option>
 					<option value="name">작성자</option>
 					<option value="content">내용</option>
-				</select>&nbsp;&nbsp;&nbsp;&nbsp; 
-				<input type="text" name="searchword" class="form-control" style="width: 150px;" placeholder="검색어">
+				</select>&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="searchword"
+					class="form-control" style="width: 150px;" placeholder="검색어">
 				<button type="submit" class="btn btn-success">검색</button>
 			</div>
 		</form>

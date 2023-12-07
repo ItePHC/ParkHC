@@ -60,8 +60,10 @@ public class IpgoController {
 			HttpSession session) {
 		
 		String path = session.getServletContext().getRealPath("/upload");
-		String uploadFileName = "";
-		System.out.println(path);
+		 System.out.println(path);
+		
+		 String uploadFileName = "";
+		
 		
 		if(file.get(0).getOriginalFilename().equals(""))
 			uploadFileName = "no";
@@ -88,6 +90,6 @@ public class IpgoController {
 		}
 		dto.setPhotoname(uploadFileName);
 		mapper.insertIpgo(dto);
-		return "/Ipgo/ipgolist";
+		return "redirect:/Ipgo/ipgolist";
 	}
 }
