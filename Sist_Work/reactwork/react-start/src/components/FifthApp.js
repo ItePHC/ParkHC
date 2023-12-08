@@ -39,7 +39,7 @@ function FifthApp(props) {
                     setRName(name);
                     setRJava(java);
                     setRReact(react);
-                    setTotal(parseInt(java)+parseInt(react));
+                    setTotal(parseInt(java)+Number(react)); 
                     setAvg(parseInt(total)/2);
 
                 }}>결과보기</button>
