@@ -11,7 +11,7 @@ function FourApp(props) {
 
     //색상을 5개 배열로 주고 결과물을 div로 출력(classname을 box로 줄것)
     const Colors = ['red', 'green', 'yellow', 'blue', 'gold']
-    const boxColor = Colors.map((color)=>(<div style={{backgroundColor:color, width:'200px', height:'160px', border:'1px solid grey', marginLeft:'10px'}}></div>));
+    const boxColor = Colors.map((color)=>(<div className='box' style={{backgroundColor:color, marginLeft:'10px'}}></div>));
 
     return (
         <div>

@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+}
+
+ul.menu{
+  list-style: none;
+  width: 700px;
+  margin-right: 100px;
+}
+
+ul.menu li{
+  font-size: 25px;
+  float: left;
+  width: 120px;
+  height: 150px;
+  line-height: 50px;
+  border: 1px solid grey;
+  margin-right: 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 3px 3px 3px grey;
+  background-color: greenyellow;
+  margin-bottom: 20px;
+}
+
+hr.line{
+  clear: both;
+  height: 10px;
+  background-color: grey;
+  width: 500px;
+}
+
+img.main_photo{
+  position: absolute;
+  left: 20px;
+  top: 30vh;
+  width: 250px;
+  border: 5px solid gold;
+}
+
+div.main_comp{
+  position: absolute;
+  font-size: 25px;
+  top: 30vh;
+  left: 350px;
+
+}

@@ -7,6 +7,7 @@ import ThreeApp from './components/ThreeApp';
 import FourApp from './components/FourApp';
 import FiveApp from './components/FiveApp';
 import SixApp from './components/SixApp';
+import SevenApp from './components/SevenApp'
 
 function App() {
   const [index,setIndex] = useState(1);     //1번을 기본값으로 설정
@@ -38,8 +39,9 @@ function App() {
         <option value='4'>FourApp확인하기</option>
         <option value='5'>FiveApp확인하기</option>
         <option value='6'>SixApp확인하기</option>
+        <option value='7'>SevenApp확인하기</option>
       </select>
-      {index===1?<OneApp/>:index===2?<TwoApp/>:index===3?<ThreeApp/>:index===4?<FourApp/>:index===5?<FiveApp/>:<SixApp/>}
+      {index===1?<OneApp/>:index===2?<TwoApp/>:index===3?<ThreeApp/>:index===4?<FourApp/>:index===5?<FiveApp/>:index===7?<SevenApp/>:<SixApp/>}
     </div>
   );
 }
