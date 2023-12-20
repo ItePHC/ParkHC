@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="boot.data.mapper.ShopMapper">
+  
+  <insert id="insertShop" parameterType="shop">
+  insert into reactshop (sangpum,photo,su,dan,ipgoday) values(#{sangpum},#{photo},#{su},#{dan},now())
+  </insert>
+  
+  <select id="getShopDatas" resultType="shop">
+  select * from reactshop order by dan asc
+  </select>
+  
+  <select id="getData" parameterType="int" resultType="shop">
+  select * from reactshop where num=#{num}
+  </select>
+  </mapper>
